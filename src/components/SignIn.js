@@ -1,11 +1,30 @@
+import { Form, Button } from "react-bootstrap";
 
 
 function SingIn(){
 
   return(
-    <div>
+    <><div>
       <h1>Welcome Back</h1>
     </div>
+    <div> 
+    <Form>
+        <Form.Group>
+          <Form.Label>Username</Form.Label>
+          <Form.Control />
+        </Form.Group>
+        <br></br>
+        <Form.Group>
+          <Form.Label>Email</Form.Label>
+          <Form.Control />
+        </Form.Group>
+        <br></br>
+        <Form.Group>
+        <Button type="submit">Login</Button>
+        </Form.Group>
+      </Form>
+      </div>
+      </>
   );
 }
 
