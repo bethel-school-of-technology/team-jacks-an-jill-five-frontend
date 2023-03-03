@@ -29,7 +29,7 @@ function SignUp() {
         </Form.Group>  <Form.Group>
           <Form.Label>How did you hear about us?</Form.Label>
           <Form.Select>
-            <option>Choose option</option>
+            <option>Select one</option>
             <option value="friend">Friend/Family</option>
             <option value="web">Web Search</option>
             <option value="other">Other</option>
