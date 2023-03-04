@@ -1,7 +1,8 @@
+import React from "react";
 import { Form, Button } from "react-bootstrap";
 
 
-function SingIn(){
+const SingIn = () => {
 
   return(
     <><div>

@@ -1,4 +1,6 @@
-function Fairlist(){
+import React from "react";
+
+const Fairlist = () => {
 
   return(
       <div>
