@@ -7,7 +7,8 @@ import Fairlist from './components/Fairlist'
 import AboutUs from './components/AboutUs';
 import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AddFair from './components/NewFair';
+
+import AddFair from './components/AddFair';
 import NewFair from './components/NewFair';
 import { UserProvider } from './contexts/UserProvider';
 import { FairProvider } from './contexts/FairProvider';
@@ -17,6 +18,7 @@ function App() {
     <UserProvider>
     <FairProvider>
     <BrowserRouter>
+
       <Routes>
           <Route path="/" element={<Home />}>
           <Route index element={<Welcome />}/>
@@ -28,6 +30,7 @@ function App() {
       </Route>
       </Routes>
       <Footer />
+      
     </BrowserRouter>
     </FairProvider>
     </UserProvider>
