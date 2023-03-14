@@ -1,5 +1,5 @@
 import React from "react";
 
-const CoffeeContext = React.createContext();
+const FairContext = React.createContext();
 
-export default CoffeeContext;
+export default FairContext;

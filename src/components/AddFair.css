@@ -12,7 +12,7 @@
 }
 
 
-.container {
+.wrap-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
@@ -26,9 +26,15 @@
     width: 40rem;
     border: 1px solid var(--grey);
     padding: 1rem;
-    background-color: var(--light-blue);
+    background-color: purple;
     color: var(--white);
     text-align: center;
     border-radius: 5px;
+  }
+
+  .btn {
+    margin: 10px auto;
+    /* background-color: lightgoldenrodyellow;
+    color: var(--white); */
   }
   
