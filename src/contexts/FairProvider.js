@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import { useEffect, useState } from "react";
 import FairContext from "./FairContext";
 
@@ -17,7 +17,7 @@ export const FairProvider = (props) => {
 
     function createFair(fair) {        
 
-    }
+}
 
     function updateFair(fair) {
 

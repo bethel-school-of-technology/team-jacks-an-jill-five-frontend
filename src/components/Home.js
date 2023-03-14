@@ -17,6 +17,8 @@ function Home() {
   <Link to="/signin" className="nav-link">Sign In</Link>
   <Link to="/fairlist" className="nav-link">Fair List</Link>
   <Link to="/about" className="nav-link">About Us</Link>
+  <Link to="/addfair" className="nav-link">Add Fair</Link>
+
   </Nav>
         </Container>
       </Navbar>
