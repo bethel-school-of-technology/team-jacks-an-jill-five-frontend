@@ -6,7 +6,8 @@ export const UserProvider = (props) => {
     const baseUrl = "http://localhost:3000/api/users/";
 
     function createUser(username, password) {       
-        let user = { username, password };
+        // added the user email, city, state, zip and referral -- let's test to see if it connects now
+        let user = { username, password, userEmail, userCity, userState, userZip, userReferral };
 
         return axios.post(baseUrl, user)
             .then(response => {
