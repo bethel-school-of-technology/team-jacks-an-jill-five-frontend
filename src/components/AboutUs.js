@@ -1,10 +1,9 @@
-function AboutUs(){
-
-  return(
+function AboutUs() {
+  return (
     <div>
-    <h1>About Us</h1>
+      <h1>About Us</h1>
       <p>Lets talk about ourselves</p>
-      </div>
+    </div>
   );
 }
 
