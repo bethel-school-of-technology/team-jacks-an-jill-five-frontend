@@ -5,8 +5,9 @@ export const UserProvider = (props) => {
 
     const baseUrl = "http://localhost:3000/api/users/";
 
-    function createUser(username, password) {       
-        let user = { username, password };
+    function createUser(username, password, userEmail, userCity, userState, userZip, userReferral) {       
+        // added the user email, city, state, zip and referral -- let's test to see if it connects now
+        let user = { username, password, userEmail, userCity, userState, userZip, userReferral };
 
         return axios.post(baseUrl, user)
             .then(response => {
@@ -16,7 +17,14 @@ export const UserProvider = (props) => {
     }
 
     function signInUser(username, password) {
-        
+        let user = { username, password };
+
+        return axios.post(`${baseUrl}/login`, user)
+            .then(response => {
+                localStorage.setItem('myFairToken', response.data.token)
+                return new Promise(resolve => resolve(response.data));
+            }
+        );
     }
 
     return (

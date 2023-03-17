@@ -6,6 +6,7 @@
   border-radius: 35px;
   padding: 10px;
   }
+  
 .Phone{
   margin: 24px;
   rotate: 5deg;
@@ -54,4 +55,7 @@ padding-right: 20px;
   justify-content: center;
   color: whitesmoke;
   border-radius: 35px;
+}
+li{
+  font-size: 20px;
 }

@@ -1,12 +1,11 @@
-import React, { useContext, useState, useEffect } from "react";
-import Form from 'react-bootstrap/Form'
+import React, { useContext,useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 import { useNavigate, useParams } from "react-router-dom";
-import '../components/AddFair.css';
+import "../components/AddFair.css";
 import FairContext from "../contexts/FairContext";
 
-
-function AddFair (){
+function AddFair() {
 
     let navigate = useNavigate()
     let params = useParams()
@@ -35,11 +34,11 @@ function AddFair (){
 
 
     function handleChange(e) {
-        setFair((preValue) =>{
-            return { ...preValue, [e.target.name]: e.target.value}
-        })
+        setFair((preValue) => {
+            return { ...preValue, [e.target.name]: e.target.value };
+        });
     }
-
+    
     function add() {
         if (fair.fairTitle !== "" && fair.fairCity !== "" && fair.fairState !== "" && fair.fairZip !== "" && fair.fairStartDate !== "" && fair.fairEndDate !== "" ) {
             return createFair(fair)
@@ -53,7 +52,7 @@ function AddFair (){
         add(fair).then(() =>  {
             navigate('/fairlist')
         }).catch(error => {
-            if (error.response.status == 401) {
+            if (error.response.status === 401) {
                 console.log(error);
                 navigate('')
             }else
@@ -109,4 +108,5 @@ function AddFair (){
       
     );
 };
+
 export default AddFair;
