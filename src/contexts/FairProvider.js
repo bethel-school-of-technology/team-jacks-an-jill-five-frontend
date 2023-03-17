@@ -7,16 +7,40 @@ export const FairProvider = (props) => {
     const [ fair, setFair ] = useState([]);
     const baseUrl = "http://localhost:3000/api/fairs/";
 
-    function getAllFairs() {
+    useEffect(() => {
+        async function getFairs() {
+            await getAllFairs()
+        }
+        getFairs()
+    }, []);
 
+
+    function getAllFairs() {
+        return axios.get(baseUrl).then(response => {
+            setFair(response.data)
+        })
     }
+
 
     function getFair(id) {
-        
-    }
+        return axios.get(`${baseUrl}/${id}`).then(response => {
+            return new Promise((resolve) => resolve(response.data))
+            .catch((error) =>
+                    new Promise((_, reject) => reject(error.response.statusText))
+                )
+        });
+    };
+
 
     function createFair(fair) {        
-
+        let myHeaders = {
+            Authorization: `Bearer ${localStorage.getItem('myFairToken')}`
+        };
+        return axios.post(baseUrl, fair, {headers: myHeaders})
+        .then(response => {
+            getAllFairs()
+            return new Promise((resolve) => resolve(response.data))
+        })
     }
 
     function updateFair(fair) {
@@ -30,7 +54,6 @@ export const FairProvider = (props) => {
     return (
         <FairContext.Provider value={{
             fair,
-            getAllFairs,
             getFair,
             createFair,
             updateFair,
