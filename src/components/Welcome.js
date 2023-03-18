@@ -2,6 +2,9 @@ import React from "react";
 import "../App.css";
 import Phone from "../Phone.png";
 import { Container } from "react-bootstrap";
+import WeatherAPI from "./WeatherAPI";
+import Rotatingtext from "./RotatingText";
+import { Link } from "react-router-dom";
 
 function Welcome() {
   return (
@@ -31,18 +34,16 @@ function Welcome() {
             </button>
           </a>
           <em>
-            <p>
-              Already a member
-              <a href="http://localhost:3001/SignIn">Click Here</a>
-            </p>
+            <Link to="/signin" className="nav-link">
+              <p>🔗 Already a member? Click Here to Sign In</p>
+            </Link>
           </em>
-          <div className="WeatherAPI">
-            <h4>WEATHER API GOES HERE</h4>
-          </div>
+          <Rotatingtext />
         </div>
         <div class="col-lg-4">
           <img className="Phone" src={Phone} height={500} alt="iphone-mockup" />
         </div>
+        <WeatherAPI />
         <div className="itemBox">
           <em>
             <h2 style={{ marginBottom: 40 }}>
