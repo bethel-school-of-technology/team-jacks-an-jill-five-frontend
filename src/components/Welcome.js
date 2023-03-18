@@ -28,7 +28,7 @@ function Welcome() {
             are saying about events happening near you and go enjoy a wonderful
             day.
           </p>
-          <a href="http://localhost:3000/signup">
+          <a href="http://localhost:3001/signup">
             <button className="WelcomeBtn" type="button">
               Sign Up
             </button>
