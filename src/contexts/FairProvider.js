@@ -20,10 +20,11 @@ export const FairProvider = (props) => {
         })
     }
 
+
     function getFair(id) {
         return axios.get(`${baseUrl}/${id}`).then(response => {
             return new Promise((resolve) => resolve(response.data))
-            .catch((error) => 
+            .catch((error) =>
                     new Promise((_, reject) => reject(error.response.statusText))
                 )
         });
