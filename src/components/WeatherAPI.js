@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useState } from "react";
 
 const api = {
@@ -8,38 +7,44 @@ const api = {
 };
 
 function WeatherAPI() {
-  const [query, setQuery] = useState("");
-  const [weather, setWeather] = useState({});
-  const search = (evt) => {
-    if (evt.key === "Enter") {
-      fetch(`${api.baseUrl}weather?q=${query}&units=metric&APPID=${api.key}`)
-        .then((res) => res.json())
-        .then((result) => {
-          setWeather(result);
-          setQuery("");
-          console.log(result);
-        });
-    }
+  const [search, setSearch] = useState("");
+  const [temperature, setTemperature] = useState({});
+
+  const searchPressed = () => {
+    fetch(`${api.baseUrl}weather?q=${search}&units=imperial&APPID=${api.key}`)
+      .then((res) => res.json())
+      .then((result) => {
+        setTemperature(result);
+      });
   };
 
   return (
     <div className="WeatherAPI">
       <main>
-        <div className="search-box">
+        <h4 style={{ marginTop: 10, marginBottom: 20 }}>
+          Always Good To Check The Temp Before you Go...
+        </h4>
+        <div className="searchbox">
           <input
-            type=""
-            className="search-bar"
-            placeholder="Location"
-            onChange={(e) => setQuery(e.target.value)}
-            value={query}
-            onKeyPress={search}
+            type="text"
+            className="searchAPi"
+            placeholder="Enter a State...."
+            onChange={(e) => setSearch(e.target.value)}
           />
+          <button onClick={searchPressed} className="APIbutton">
+            Check Temp
+          </button>
         </div>
-        <div className="location-box"></div>
-        <div className="location">New York City</div>
-        <div className="weather-box">
-          <div className="temp">15</div>
-          <div className="weather">Sunny</div>
+        <div className="location">{temperature.name}</div>
+
+        {temperature.main ? (
+          <div className="tempBox">{temperature.main.temp.toFixed()} °</div>
+        ) : null}
+
+        <div className="weatherDescription">
+          {temperature.weather ? (
+            <> {temperature.weather[0].description}</>
+          ) : null}
         </div>
       </main>
     </div>
