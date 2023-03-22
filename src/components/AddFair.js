@@ -45,7 +45,7 @@ function AddFair() {
         } else {
             alert('You need to fill all fields except description & Image')
         }
-    }
+    } 
 
     function handleSubmit(e) {
         e.preventDefault()

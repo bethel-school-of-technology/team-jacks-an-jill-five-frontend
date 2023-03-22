@@ -14,7 +14,6 @@ export const FairProvider = (props) => {
         getFairs()
     }, []);
 
-
     function getAllFairs() {
         return axios.get(baseUrl).then(response => {
             setFair(response.data)
@@ -31,7 +30,6 @@ export const FairProvider = (props) => {
         });
     };
 
-
     function createFair(fair) {        
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myFairToken')}`
@@ -45,7 +43,7 @@ export const FairProvider = (props) => {
 
     function updateFair(fair) {
 
-    }
+ }
 
     function deleteFair(id) {
 
