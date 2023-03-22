@@ -20,8 +20,8 @@ function Welcome() {
           </em>
           <p style={{ fontWeight: 500 }}>
             Festivals? State Parks? State Fairs? Are you a foodie? If you can go
-            to it. You can leave a fair review. So what are you waiting
-            for......
+            to it. You can leave a fair review/comment about it. So what are you
+            waiting for......
           </p>
           <p style={{ fontSize: 15 }}>
             <em>
@@ -40,7 +40,7 @@ function Welcome() {
               <p>
                 🔗 Already a member?{" "}
                 <span style={{ color: "purple", textDecoration: "underLine" }}>
-                  Click Here to Sign In
+                  Sign In Here
                 </span>
               </p>
             </Link>
