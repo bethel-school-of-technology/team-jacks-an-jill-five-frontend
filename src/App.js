@@ -12,6 +12,7 @@ import AddFair from './components/AddFair';
 import NewFair from './components/NewFair';
 import { UserProvider } from './contexts/UserProvider';
 import { FairProvider } from './contexts/FairProvider';
+import FairDetails from './components/FairDetails';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="signin" element={<SignIn />} />
           <Route path="fairlist" element={<Fairlist />} />
           <Route path="addfair" element={<AddFair />} />
+          <Route path='fairdetails/:fairId' element={<FairDetails />} />
           <Route path="about" element={<AboutUs />} />
       </Route>
       </Routes>
