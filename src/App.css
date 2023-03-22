@@ -6,6 +6,9 @@
   border-radius: 35px;
   padding: 10px;
   }
+  .title{
+    font-weight: 700;
+  }
   
 .Phone{
   margin: 24px;
@@ -24,10 +27,6 @@ footer{
   position: relative;
   min-height: 100%;
 }
-
-Form {
-  padding: 10px;
-}
 h1{
   font-weight: bolder
 }
@@ -41,13 +40,8 @@ padding-right: 20px;
   margin: 0 auto 20px;
   font-size: 400%;
 }
-.boxItem{
-  background-color:blueviolet;
-  margin: 2px;
-}
 .WeatherAPI {
   background-image: linear-gradient(#42275a , #734b6d);
-  height: 200px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -57,23 +51,41 @@ padding-right: 20px;
   color: whitesmoke;
   color: white;
   border-radius: 20px;
-}
-li{
-  font-size: 20px;
-}
-.API{
-  border-radius: 8px 0px 16px 0px;
-  border-bottom: 3px solid blueviolet;
-  font-size: 20px;
-  transition: 0.2s ease-out;
+
 }
 .location {
+font-weight: bolder;
  font-Size: 30px;
+ text-decoration: up;
 }
-.current {
-  font-weight: 500;
-  font-size: 32px;
+.tempBox{
+  display: flex;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 600;
 }
+
+.APIbutton{
+  color:black;
+  font-weight: 600;
+  background-color: #f5ba13;
+  padding: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+
+}
+.searchbox{
+height: 20px;
+margin-bottom: 15px;
+}
+
+.weatherDescription{
+  font-size: 30px;
+}
+
 .rotatingText {
   font-family: "Georgia", serif;
   font-style: italic;

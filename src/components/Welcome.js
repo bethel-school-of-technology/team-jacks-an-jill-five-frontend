@@ -11,22 +11,24 @@ function Welcome() {
     <Container fluid>
       <div class="row">
         <div class="col-lg-8">
-          <h1>What's Fair</h1>
+          <h1 className="title">What's Fair</h1>
           <em>
-            <p style={{ fontSize: 20 }}>
+            <p style={{ fontWeight: 500 }}>
               An unique exciting tool that lets you leave honest fair candid{" "}
               reviews on your latest trip. So that others may know about it.
             </p>
           </em>
-          <p>
+          <p style={{ fontWeight: 500 }}>
             Festivals? State Parks? State Fairs? Are you a foodie? If you can go
             to it. You can leave a fair review. So what are you waiting
             for......
           </p>
-          <p>
-            Not comfrotable leaving a reveiw yet? No worries. See what others
-            are saying about events happening near you and go enjoy a wonderful
-            day.
+          <p style={{ fontSize: 15 }}>
+            <em>
+              Not comfrotable leaving a reveiw yet? No worries. See what others
+              are saying about events happening near you and go enjoy a
+              wonderful day.{" "}
+            </em>
           </p>
           <a href="http://localhost:3001/signup">
             <button className="WelcomeBtn" type="button">
@@ -35,7 +37,12 @@ function Welcome() {
           </a>
           <em>
             <Link to="/signin" className="nav-link">
-              <p>🔗 Already a member? Click Here to Sign In</p>
+              <p>
+                🔗 Already a member?{" "}
+                <span style={{ color: "purple", textDecoration: "underLine" }}>
+                  Click Here to Sign In
+                </span>
+              </p>
             </Link>
           </em>
           <Rotatingtext />
