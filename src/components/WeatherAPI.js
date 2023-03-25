@@ -48,11 +48,13 @@ function WeatherAPI() {
                   <img
                     style={{ height: "40px" }}
                     src={`https://openweathermap.org/img/wn/${temperature.weather[0].icon}@4x.png`}
+                    alt="weatherIcon"
                   ></img>
                   {temperature.weather[0].description}
                   <img
                     style={{ height: "40px" }}
                     src={`https://openweathermap.org/img/wn/${temperature.weather[0].icon}@4x.png`}
+                    alt="weatherIcon"
                   ></img>
                 </>
               ) : null}
