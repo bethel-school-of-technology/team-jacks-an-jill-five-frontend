@@ -35,17 +35,30 @@ function WeatherAPI() {
             Check Temp
           </button>
         </div>
+
         <div className="location">{temperature.name}</div>
-
         {temperature.main ? (
-          <div className="tempBox">{temperature.main.temp.toFixed()} °</div>
-        ) : null}
+          <>
+            <div className="tempBox">{temperature.main.temp.toFixed()}°</div>
 
-        <div className="weatherDescription">
-          {temperature.weather ? (
-            <> {temperature.weather[0].description}</>
-          ) : null}
-        </div>
+            <div className="weatherDescription">
+              {temperature.weather || temperature.weather.icon ? (
+                <>
+                  {" "}
+                  <img
+                    style={{ height: "40px" }}
+                    src={`https://openweathermap.org/img/wn/${temperature.weather[0].icon}@4x.png`}
+                  ></img>
+                  {temperature.weather[0].description}
+                  <img
+                    style={{ height: "40px" }}
+                    src={`https://openweathermap.org/img/wn/${temperature.weather[0].icon}@4x.png`}
+                  ></img>
+                </>
+              ) : null}
+            </div>
+          </>
+        ) : null}
       </main>
     </div>
   );

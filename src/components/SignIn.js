@@ -42,18 +42,13 @@ const SignIn = () => {
           <br></br>
           <Form.Group>
             <Form.Label>Password</Form.Label>
-            <span className="visble">
-              <Form.Control
-                input
-                placeholder="Enter password"
-                type="password"
-                name="text"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <span className="visble">
-                <i class="fa-solid fa-eye"></i>
-              </span>
-            </span>
+            <Form.Control
+              input
+              placeholder="Enter password"
+              type="password"
+              name="text"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </Form.Group>
           <br></br>
           <Form.Group>
