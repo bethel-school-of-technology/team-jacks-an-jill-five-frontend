@@ -9,7 +9,6 @@ import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import AddFair from './components/AddFair';
-import NewFair from './components/NewFair';
 import { UserProvider } from './contexts/UserProvider';
 import { FairProvider } from './contexts/FairProvider';
 import FairDetails from './components/FairDetails';

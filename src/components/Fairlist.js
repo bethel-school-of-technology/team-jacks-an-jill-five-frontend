@@ -18,7 +18,7 @@ const Fairlist = () => {
                     {fair.map((f) => {
                         return (
                           <ListGroup >
-                          <Card key={f.id} className="align-self-start w-75">
+                          <Card key={f.fairId} className="align-self-start w-75">
                             <Card.Body>
                             <Card.Title><h1>{f.fairTitle}</h1></Card.Title>
                             <Card.Text>
@@ -27,7 +27,7 @@ const Fairlist = () => {
                                 <p>{f.fairStartDate}</p>
                             </div>
                             </Card.Text>
-                            <Button><Link to={`/fairdetails/${f.id}`} className="btn btn-primary mx-1">Details</Link> </Button> 
+                            <Button><Link to={`/fairdetails/${f.fairId}`} className="btn btn-primary mx-1">Details</Link> </Button> 
                             </Card.Body>
                           </Card>
                           </ListGroup>
