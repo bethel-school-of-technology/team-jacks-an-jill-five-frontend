@@ -88,7 +88,7 @@ function AddFair() {
                     <Form.Control placeholder="Enter Zip Here" type="text" value={ fair.fairZip} name="fairZip" onChange={handleChange} />
                 </Form.Group>
                 <Form.Group classname= "mb-3">
-                    <Form.Label>State Date</Form.Label>
+                    <Form.Label>Start Date</Form.Label>
                     <Form.Control placeholder="Enter Date Here" type="text" value={fair.fairStartDate} name="fairStartDate" onChange={handleChange} />
                 </Form.Group>
                 <Form.Group classname= "mb-3">
