@@ -1,51 +1,49 @@
-import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
 import FairContext from "../contexts/FairContext";
-import { useContext, useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom';
+import { Card, Spinner } from "react-bootstrap";
 
+const FairDetails = () => {
 
+    let params = useParams();
+    let navigate = useNavigate();
 
-function FairDetails() {
+    let { getFair, deleteFair } = useContext(FairContext);
 
-    let { getFair,  } = useContext(FairContext)
-    // let [ product, setProduct ] = useState()
-    // let params = useParams()
-    // let navigate = useNavigate()
-
-    // let { id, productName, description, price } = product
+    let [fair, setFair] = useState({
+        fairId: "",
+        fairTitle: "",
+        fairCity: "",
+        fairState: "",
+        fairZip: "",
+        fairDescription: "",
+        fairStartDate: "",
+        fairEndDate: "",
+        fairImage: "",
+        fairWebsite: ""
+    });
     
-    // useEffect(() => {
-    //     async function fetch() {
-    //         await getProduct(params.productId)
-    //         .then((product) => setProduct(product))
-    //     }
-    //     fetch()
-    //     }, [params.productId])
-
-
-    // function handleDeleteProduct(id) {
-    //     deleteProduct(id)
-    //     navigate('/products')
-    //   }
+    useEffect(() => {
+        async function fetch() {
+            await getFair(params.fairId).then((fair) => setFair(fair))
+        }
+        fetch()
+    }, [params.fairId]);
     
+    return (
 
-    // return(
-    //     <Card className="align-self-start w-25">
-    //     {/* <Card.Img variant="top" src={require(`../node_modules/fake-avatars/avatars/${avatar}`).default} /> */}
-    //     <Card.Body>
-    //       <Card.Title>{productName}</Card.Title>
-    //       <Card.Subtitle className="mb-2 text-muted">Price: ${price}</Card.Subtitle>
-    //       <Card.Text>
-    //         <strong>Description:</strong> <span>{description}</span>
-    //       </Card.Text>
-    //       <Link to={`/products/${id}/edit`} className="btn btn-primary mx-3">Edit</Link>
-    //       <Button variant="danger" onClick={handleDeleteProduct.bind(this, id)}>Delete</Button>
-    //     </Card.Body>
-    //   </Card>
-    // )
+        <Card className="align-self-start w-25">
+            <Card.Img variant="top" src={fair.fairImage} />
+            <Card.Body>
+                <Card.Title>{fair.fairTitle}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">{fair.fairCity}, {fair.fairState}</Card.Subtitle>
+                <Card.Text>
+                    <strong>Dates:</strong> <span>{fair.fairStartDate} - {fair.fairEndDate}</span>
+                    <p>{fair.fairDescription}</p>
+                </Card.Text>
+            </Card.Body>
+        </Card>
+    )
 }
 
-
-export default FairDetails
+export default FairDetails;
