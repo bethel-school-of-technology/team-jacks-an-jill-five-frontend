@@ -27,33 +27,49 @@ export const FairProvider = (props) => {
     });
   }
 
-  function createFair(fair) {
-    let myHeaders = {
-      Authorization: `Bearer ${localStorage.getItem("myFairToken")}`,
-    };
-    return axios
-      .post(baseUrl, fair, { headers: myHeaders })
-      .then((response) => {
-        getAllFairs();
-        return new Promise((resolve) => resolve(response.data));
-      });
-  }
+    function createFair(fair) {        
+        let myHeaders = {
+            Authorization: `Bearer ${localStorage.getItem('myFairToken')}`
+        };
+        return axios.post(baseUrl, fair, {headers: myHeaders})
+        .then(response => {
+            getAllFairs()
+            return new Promise((resolve) => resolve(response.data))
+        })
+    }
 
-  function updateFair(fair) {}
+    function updateFair(fair) {
+        let myHeaders = {
+            Authorization: `Bearer ${localStorage.getItem('myFairToken')}`
+        };
+        return axios.put(baseUrl + fair.fairId, fair, {headers: myHeaders})
+        .then(response => {
+            getAllFairs()
+            return new Promise((resolve) => resolve(response.data))
+        })
+ }
 
-  function deleteFair(id) {}
+    function deleteFair(id) {
+        let myHeaders = {
+            Authorization: `Bearer ${localStorage.getItem('myFairToken')}`
+        };
+        return axios.delete(baseUrl + id, {headers: myHeaders})
+        .then(response => {
+            getAllFairs()
+            return new Promise((resolve) => resolve(response.data))
+        })
+    }
 
-  return (
-    <FairContext.Provider
-      value={{
-        fair,
-        getFair,
-        createFair,
-        updateFair,
-        deleteFair,
-      }}
-    >
-      {props.children}
-    </FairContext.Provider>
-  );
+    return (
+        <FairContext.Provider value={{
+            fair,
+            getFair,
+            createFair,
+            updateFair,
+            deleteFair
+        }}>
+            { props.children }
+        </FairContext.Provider>
+    )
 };
+
