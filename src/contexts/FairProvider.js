@@ -42,11 +42,25 @@ export const FairProvider = (props) => {
     }
 
     function updateFair(fair) {
-
+        let myHeaders = {
+            Authorization: `Bearer ${localStorage.getItem('myFairToken')}`
+        };
+        return axios.put(baseUrl + fair.fairId, fair, {headers: myHeaders})
+        .then(response => {
+            getAllFairs()
+            return new Promise((resolve) => resolve(response.data))
+        })
  }
 
     function deleteFair(id) {
-
+        let myHeaders = {
+            Authorization: `Bearer ${localStorage.getItem('myFairToken')}`
+        };
+        return axios.delete(baseUrl + id, {headers: myHeaders})
+        .then(response => {
+            getAllFairs()
+            return new Promise((resolve) => resolve(response.data))
+        })
     }
 
     return (
