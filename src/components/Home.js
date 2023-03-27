@@ -4,7 +4,6 @@ import BlackLogo from "../BlackLogo.png";
 import { Stack, Container, Navbar, Nav } from "react-bootstrap";
 
 function Home() {
-
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -20,29 +19,51 @@ function Home() {
             />
             {/* link to "home" / */}
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")} />
+          <Navbar.Toggle
+            aria-controls="responsive-navbar-nav"
+            onClick={() => setExpanded(expanded ? false : "expanded")}
+          />
           <Navbar.Collapse
             id="responsive-navbar-nav"
             className="justify-content-end"
           >
             <Nav>
               {/* <Link to="/" className="nav-link">Home</Link> */}
-              <Link to="/signup" className="nav-link" onClick={() => setExpanded(false)}>
+              <Link
+                to="/signup"
+                className="nav-link"
+                onClick={() => setExpanded(false)}
+              >
                 Sign Up
               </Link>
-              <Link to="/signin" className="nav-link" onClick={() => setExpanded(false)}>
+              <Link
+                to="/signin"
+                className="nav-link"
+                onClick={() => setExpanded(false)}
+              >
                 Sign In
               </Link>
-              <Link to="/addfair" className="nav-link" onClick={() => setExpanded(false)}>
+              <Link
+                to="/addfair"
+                className="nav-link"
+                onClick={() => setExpanded(false)}
+              >
                 Add Fair
               </Link>
-              <Link to="/fairlist" className="nav-link" onClick={() => setExpanded(false)}>
+              <Link
+                to="/fairlist"
+                className="nav-link"
+                onClick={() => setExpanded(false)}
+              >
                 Fair List
               </Link>
-              <Link to="/about" className="nav-link" onClick={() => setExpanded(false)}>
+              <Link
+                to="/about"
+                className="nav-link"
+                onClick={() => setExpanded(false)}
+              >
                 About Us
               </Link>
-
             </Nav>
           </Navbar.Collapse>
         </Container>
