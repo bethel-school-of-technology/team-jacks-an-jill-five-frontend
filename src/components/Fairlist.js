@@ -8,6 +8,7 @@ const Fairlist = () => {
   return (
     <FairContext.Consumer>
     {
+
       ({ fair }) => {
         return (
           <div>
@@ -21,6 +22,7 @@ const Fairlist = () => {
                     return (
                         <Col  sm="auto" >
                           <Card key={f.fairId} style={{ width: '18rem' }}>
+
                             <Card.Body>
                             <Card.Title><h2>{f.fairTitle}</h2></Card.Title>
                           <Card.Text>
@@ -29,7 +31,9 @@ const Fairlist = () => {
                                 <p>{f.fairStartDate}</p>
                             </div>
                             </Card.Text>
+
                             <Link to={`/fairdetails/${f.fairId}`} className="btn btn-primary mx-1">Details</Link>
+
                             </Card.Body>
                           </Card>
                         </Col>

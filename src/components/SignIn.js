@@ -14,7 +14,7 @@ const SignIn = () => {
     event.preventDefault();
     signInUser(username, password)
       .then(() => {
-        navigate("/fairlist");
+        navigate("/profile/:userId");
       })
       .catch((error) => {
         console.log(error);
@@ -50,9 +50,6 @@ const SignIn = () => {
                 name="text"
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <span className="visble">
-                <i class="fa-solid fa-eye"></i>
-              </span>
             </span>
           </Form.Group>
           <br></br>
