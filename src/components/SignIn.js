@@ -14,7 +14,7 @@ const SignIn = () => {
     event.preventDefault();
     signInUser(username, password)
       .then(() => {
-        navigate("/fairlist");
+        navigate("/profile/:userId");
       })
       .catch((error) => {
         console.log(error);
@@ -26,8 +26,7 @@ const SignIn = () => {
     <>
       <div>
         <h1>Welcome Back</h1>
-      </div>
-      <div>
+      </div><div>
         <Form onSubmit={handleSubmit}>
           <Form.Group>
             <Form.Label>Username</Form.Label>
@@ -36,19 +35,22 @@ const SignIn = () => {
               placeholder="Enter username"
               type="text"
               name="username"
-              onChange={(e) => setUsername(e.target.value)}
-            />
+              onChange={(e) => setUsername(e.target.value)} />
           </Form.Group>
           <br></br>
           <Form.Group>
             <Form.Label>Password</Form.Label>
-            <Form.Control
-              input
-              placeholder="Enter password"
-              type="password"
-              name="text"
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <span className="visble">
+              <Form.Control
+                input
+                placeholder="Enter password"
+                type="password"
+                name="text"
+                onChange={(e) => setPassword(e.target.value)} />
+              <span className="visble">
+                <i class="fa-solid fa-eye"></i>
+              </span>
+            </span>
           </Form.Group>
           <br></br>
           <Form.Group>
@@ -57,7 +59,7 @@ const SignIn = () => {
         </Form>
       </div>
     </>
-  );
+  )
 };
 
 export default SignIn;
