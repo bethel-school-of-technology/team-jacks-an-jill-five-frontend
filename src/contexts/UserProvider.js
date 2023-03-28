@@ -1,38 +1,50 @@
 import axios from "axios";
+import { useState } from "react";
 import UserContext from "./UserContext";
 
 export const UserProvider = (props) => {
 
+    const [user, setUser] = useState([])
     const baseUrl = "http://localhost:3000/api/users/";
 
-    function createUser(username, password, userEmail, userCity, userState, userZip, userReferral) {       
+
+    async function createUser(username, password, userEmail, userCity, userState, userZip, userReferral) {
         // added the user email, city, state, zip and referral -- let's test to see if it connects now
         let user = { username, password, userEmail, userCity, userState, userZip, userReferral };
 
-        return axios.post(baseUrl, user)
-            .then(response => {
-                return new Promise(resolve => resolve (response.data));
-            }
-        );
+        const response = await axios.post(baseUrl, user);
+        return await new Promise(resolve => resolve(response.data));
     }
 
-    function signInUser(username, password) {
+    async function signInUser(username, password) {
         let user = { username, password };
 
-        return axios.post(`${baseUrl}/login`, user)
-            .then(response => {
-                localStorage.setItem('myFairToken', response.data.token)
-                return new Promise(resolve => resolve(response.data));
-            }
-        );
+        const response = await axios.post(`${baseUrl}/login`, user);
+        localStorage.setItem('myFairToken', response.data.token);
+        return await new Promise(resolve => resolve(response.data));
     }
+
+    async function getUser(userId) {
+        let myHeaders = {
+            Authorization: `Bearer ${localStorage.getItem('myFairToken')}`
+        };
+
+        const response = await axios.get(`${baseUrl}/${userId}`, { headers: myHeaders });
+        try {
+            return await new Promise((resolve) => resolve(response.data));
+        } catch (error) {
+            return await new Promise((_, reject) => reject(error.response.statusText));
+        }
+    };
 
     return (
         <UserContext.Provider value={{
+            user,
             createUser,
-            signInUser
+            signInUser,
+            getUser
         }}>
-            { props.children }
+            {props.children}
         </UserContext.Provider>
     )
 }
