@@ -29,7 +29,9 @@ const Fairlist = () => {
                                 <p>{f.fairStartDate}</p>
                             </div>
                             </Card.Text>
+
                             <Link to={`/fairdetails/${f.fairId}`} className="btn btn-primary mx-1">Details</Link>
+
                             </Card.Body>
                           </Card>
                         </Col>

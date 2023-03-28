@@ -1,19 +1,20 @@
-import React from 'react'
-import SignUp from './components/SignUp';
-import Home from './components/Home';
-import Welcome from './components/Welcome';
-import SignIn from './components/SignIn';
-import Fairlist from './components/Fairlist'
-import AboutUs from './components/AboutUs';
-import Footer from './components/Footer';
+import React from "react";
+import SignUp from "./components/SignUp";
+import Home from "./components/Home";
+import Welcome from "./components/Welcome";
+import SignIn from "./components/SignIn";
+import Fairlist from "./components/Fairlist";
+import AboutUs from "./components/AboutUs";
+import Footer from "./components/Footer";
+import ErrorPage from "./components/ErrorPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import AddFair from './components/AddFair';
-import { UserProvider } from './contexts/UserProvider';
-import { FairProvider } from './contexts/FairProvider';
-import FairDetails from './components/FairDetails';
-import { CommentProvider } from './contexts/CommentProvider';
-import UserProfile from './components/UserProfile';
+import AddFair from "./components/AddFair";
+import { UserProvider } from "./contexts/UserProvider";
+import { FairProvider } from "./contexts/FairProvider";
+import FairDetails from "./components/FairDetails";
+import { CommentProvider } from "./contexts/CommentProvider";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   return (
@@ -29,8 +30,9 @@ function App() {
                 <Route path="profile/:userId" element={<UserProfile />} />
                 <Route path="fairlist" element={<Fairlist />} />
                 <Route path="addfair" element={<AddFair />} />
-                <Route path='fairdetails/:fairId' element={<FairDetails />} />
+                <Route path="fairdetails/:fairId" element={<FairDetails />} />
                 <Route path="about" element={<AboutUs />} />
+                <Route path="errorpage" element={<ErrorPage />} />
               </Route>
             </Routes>
             <Footer />
@@ -38,7 +40,7 @@ function App() {
         </CommentProvider>
       </FairProvider>
     </UserProvider>
-  )
+  );
 }
 
 export default App;

@@ -27,19 +27,16 @@ export const FairProvider = (props) => {
     });
   }
 
-  function createFair(fair) {
-    let myHeaders = {
-      Authorization: `Bearer ${localStorage.getItem("myFairToken")}`,
-    };
-    return axios
-      .post(baseUrl, fair, { headers: myHeaders })
-      .then((response) => {
-        getAllFairs();
-        return new Promise((resolve) => resolve(response.data));
-      });
-  }
-
-  function updateFair(fair) {}
+    function createFair(fair) {        
+        let myHeaders = {
+            Authorization: `Bearer ${localStorage.getItem('myFairToken')}`
+        };
+        return axios.post(baseUrl, fair, {headers: myHeaders})
+        .then(response => {
+            getAllFairs()
+            return new Promise((resolve) => resolve(response.data))
+        })
+    }
 
     function updateFair(fair) {
         let myHeaders = {
