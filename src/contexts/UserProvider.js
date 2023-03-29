@@ -8,9 +8,9 @@ export const UserProvider = (props) => {
     const baseUrl = "http://localhost:3000/api/users/";
 
 
-    async function createUser(username, password, userEmail, userCity, userState, userZip, userReferral) {
+    async function createUser(username, password, userEmail, userCity, userState, userZip, userReferral, userImage) {
         // added the user email, city, state, zip and referral -- let's test to see if it connects now
-        let user = { username, password, userEmail, userCity, userState, userZip, userReferral };
+        let user = { username, password, userEmail, userCity, userState, userZip, userReferral, userImage };
 
         const response = await axios.post(baseUrl, user);
         return await new Promise(resolve => resolve(response.data));
