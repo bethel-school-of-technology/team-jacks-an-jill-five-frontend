@@ -1,5 +1,5 @@
 import React from "react";
-import ListGroup  from "react-bootstrap/ListGroup";
+import ListGroup from "react-bootstrap/ListGroup";
 import FairContext from "../contexts/FairContext";
 import { Link, Outlet } from "react-router-dom";
 import { Button, Card, CardImg, Col, Container, Row, Stack } from "react-bootstrap";
@@ -41,15 +41,14 @@ const Fairlist = () => {
                         </Col>
                     )
                   })}
-                  </Row>
-                </Container>
-              </div>
+                </Row>
+              </Container>
+            </div>
           </div>
-        )
-      }
-    }
+        );
+      }}
     </FairContext.Consumer>
-);
-}
-  
-  export default Fairlist;
+  );
+};
+
+export default Fairlist;
