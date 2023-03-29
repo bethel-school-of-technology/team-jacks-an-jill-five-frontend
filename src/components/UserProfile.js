@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import UserContext from "../contexts/UserContext";
 import FairContext from "../contexts/FairContext";
 import {
@@ -17,6 +17,7 @@ const UserProfile = () => {
         userCity: "",
         userState: "",
         userReferral: "",
+        userImage: "",
         userId: ""
     });
 
@@ -62,7 +63,7 @@ const UserProfile = () => {
     return (
         <>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=788&q=80" />
+                <Card.Img variant="top" src={user.userImage} />
                 <Card.Body>
                     <Card.Title>Welcome, {user.username}</Card.Title>
                     <ListGroup className="list-group-flush">

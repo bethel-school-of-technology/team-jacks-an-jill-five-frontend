@@ -72,4 +72,3 @@ export const FairProvider = (props) => {
         </FairContext.Provider>
     )
 };
-
