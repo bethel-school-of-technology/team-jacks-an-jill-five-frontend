@@ -223,3 +223,8 @@ top: 100px;
   }
   
 }
+
+.fimage {
+  max-width: 380px;
+  max-height: 380px;
+}

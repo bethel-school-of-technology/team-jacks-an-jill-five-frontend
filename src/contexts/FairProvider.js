@@ -4,7 +4,7 @@ import FairContext from "./FairContext";
 
 export const FairProvider = (props) => {
   const [fair, setFair] = useState([]);
-  const baseUrl = "http://localhost:3000/api/fairs/";
+  const baseUrl = "http://localhost:3000/api/fairs";
 
   useEffect(() => {
     async function getFairs() {

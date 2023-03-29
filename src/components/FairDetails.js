@@ -50,10 +50,10 @@ const FairDetails = () => {
                 <div class="container-fluid py-3">
                     <div class="row padding">
                         <div class="col-lg-5">
-                            <img src={fair.fairImage} className="fimage" class="img-fluid" alt="fair" />
+                            <img src={fair.fairImage} class="fimage" alt="fair" />
                         </div>
                         <div class="col-lg-7">
-                            <p className="fairDesc" class="ml-2 py-2">{fair.fairDescription}</p>
+                            <p className="fairDesc" class="align-self-center">{fair.fairDescription}</p>
                         </div>
 
                     </div>
