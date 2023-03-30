@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
 import FairContext from "../contexts/FairContext";
-import { useParams, useNavigate } from 'react-router-dom';
-import { Card, Container, Spinner } from "react-bootstrap";
+import { useParams, useNavigate, Link } from 'react-router-dom';
+//import { Card, Container, Spinner } from "react-bootstrap";
+import CommentForm from '../components/CommentForm';
+import CommentContext from "../contexts/CommentContext";
+import { Container } from "react-bootstrap";
 
 const FairDetails = () => {
 
@@ -31,53 +34,53 @@ const FairDetails = () => {
     }, [params.fairId]);
 
     return (
-        <><div class="container-fluid padding">
-            <div class="row text-center padding">
-                <div class="col-12">
-                    <h1 class="display-4">{fair.fairTitle}</h1>
+        <><div className="container padding">
+            <div className="row text-center padding">
+                <div className="col-12">
+                    <h1 className="display-4">{fair.fairTitle}</h1>
                 </div>
             </div>
         </div>
-            <div class="container-fluid padding ">
-                <div class="row padding">
-                    <div class="col-lg-6 text-center">
+            <div className="container-fluid padding ">
+                <div className="row padding">
+                    <div className="col-lg-6 text-center">
                         <h4>{fair.fairCity}, {fair.fairState}</h4>
                     </div>
-                    <div class="col-lg-6 text-center">
+                    <div className="col-lg-6 text-center">
                         <h4>{fair.fairStartDate} - {fair.fairEndDate}</h4>
                     </div>
                 </div>
-                <div class="container-fluid py-3">
-                    <div class="row padding">
-                        <div class="col-lg-5">
-                            <img src={fair.fairImage} class="fimage" alt="fair" />
+                <div className="container-fluid py-3">
+                    <div className="row padding">
+                        <div className="col-lg-6 mx-auto">
+                            <img src={fair.fairImage} id="fairImage" className="img-fluid justify-content-center" alt="fair" />
                         </div>
-                        <div class="col-lg-7">
-                            <p className="fairDesc" class="align-self-center">{fair.fairDescription}</p>
+                        <div className="col-lg-6">
+                            <div className="row">
+                                <p id="fairDesc" className="justify-content-center">{fair.fairDescription}</p>
+                            </div>
+                            <div className="row">
+                                <div className="container mb-2">
+                                    <Link to={fair.fairWebsite} className="btn btn-secondary btn-sm text-center" target="_blank">Event site</Link>
+                                </div>
+                            </div>
+                            <hr mb-3 />
+                            <div className="row">
+                                <div className="col-lg-6 text-center">
+                                    <h3 className="fairComment">Comments</h3>
+                                </div>
+                                <div className="container-fluid py-3" id="commentContainer">
+                                    <div className="row py-1">
+                                        <div className="col-12 mb-2">
+                                            <CommentForm />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
 
-            </div>
-            <div class="banner">
-                <div class="container-fluid padding">
-                    <div class="row">
-                        <div class="col-lg-6 text-center">
-                            <h3 className="fairComment">Comments</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid py-3" className="commentContainer">
-                    <div class="row py-1">
-                        <div class="col-12 mb-2 py-2">
-                            <p>Fair Comments will go here</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <button class="btn btn-lg">Add Comment</button>
             </div>
         </>
     )

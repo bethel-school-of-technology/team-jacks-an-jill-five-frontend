@@ -289,3 +289,12 @@ top: 100px;
   outline: none;
   font-weight: bolder;
 }
+
+#fairImage {
+  max-width: 420px;
+  max-height: 420px;
+}
+
+#commentContainer {
+  align-content: center;
+}
