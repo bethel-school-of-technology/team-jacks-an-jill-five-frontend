@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { useNavigate, useParams } from "react-router-dom";
 import "../components/AddFair.css";
@@ -101,7 +101,9 @@ function AddFair() {
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group classname="mb-3">
+
+          <Row className="mb-3">
+          <Form.Group as={Col}>
             <Form.Label>City</Form.Label>
             <Form.Control
               placeholder="Enter City Here"
@@ -111,7 +113,7 @@ function AddFair() {
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group classname="mb-3">
+          <Form.Group as={Col}>
             <Form.Label>State</Form.Label>
             <Form.Control
               placeholder="Enter State Here"
@@ -121,7 +123,7 @@ function AddFair() {
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group classname="mb-3">
+          <Form.Group as={Col}>
             <Form.Label>Zip</Form.Label>
             <Form.Control
               placeholder="Enter Zip Here"
@@ -131,7 +133,10 @@ function AddFair() {
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group classname="mb-3">
+          </Row>
+
+          <Row classname="mb-3">
+          <Form.Group as={Col}>
             <Form.Label>Start Date</Form.Label>
             <Form.Control
               placeholder="Enter Date Here"
@@ -141,7 +146,7 @@ function AddFair() {
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group classname="mb-3">
+          <Form.Group as={Col}>
             <Form.Label>End Date</Form.Label>
             <Form.Control
               placeholder="Enter Date Here"
@@ -151,6 +156,8 @@ function AddFair() {
               onChange={handleChange}
             />
           </Form.Group>
+          </Row>
+
           <Form.Group classname="mb-3">
             <Form.Label>Image</Form.Label>
             <Form.Control
@@ -161,7 +168,6 @@ function AddFair() {
               onChange={handleChange}
             />
           </Form.Group>
-
           <Button
             className="btn"
             variant="warning"
