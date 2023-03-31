@@ -8,14 +8,22 @@ const EditFair = () => {
 
     let params = useParams()
     let [ editFair, seteditFair ] = useState({
-        id: params.id,
-        message: "",
+        id: params.fairId,
+        fairTitle: "",
+        fairCity: "",
+        fairState: "",
+        fairZip: "",
+        fairStartDate: "",
+        fairEndDate: "",
+        fairDescription: "",
+        fairImage: "",
+    
     });
   
     let navigate = useNavigate();
-    let { updateFair, getFair } = useContext(FairContext);
+    let { updateFair, getFair, deleteFair } = useContext(FairContext);
     let { getUser } = useContext(UserContext);
-    let { id, message} = editFair
+    // let { id, } = editFair
 
     useEffect(() => {
         if (fairId === undefined) return
@@ -38,25 +46,30 @@ const EditFair = () => {
         return editFair(updateFair)
     }
 
+    function handleDelete(id) {
+        deleteFair(id)
+        navigate('/fairlist')
+      }
+
 
     function handleSubmit(event) {
         event.preventDefault();
         update().then((updateFair) => {
-            <alert>You have update this coffee listing!</alert>
+            <alert>You have update this Fair listing!</alert>
             navigate('/fairlist');
         }).catch(error => {
-            if (error.response.status === 401) {
-                console.log(error);
-                alert('You need to sign in');
-                navigate("/signin");
-              }  else if (error.response.status === 403) {
-                console.log(error);
-                alert('You don\'t have rights for this action');
-                // navigate("/signin");
-              } else {
-              console.log(error);
-              alert('Error: ' + error)
-              }
+           if (error.response.status === 401) {
+          console.log(error);
+          alert('You need to sign in');
+          navigate("/signin");
+        }  else if (error.response.status === 403) {
+          console.log(error);
+          alert('You don\'t have rights for this action');
+          // navigate("/signin");
+        } else {
+        console.log(error);
+        alert('Error: ' + error)
+        }
         });
     }
 
@@ -88,7 +101,7 @@ const EditFair = () => {
             <Form.Control
               placeholder="Event Name Here"
               type="text"
-              value={fair.fairTitle}
+              value={editFair.fairTitle}
               name="fairTitle"
               onChange={handleChange}
             />
@@ -98,7 +111,7 @@ const EditFair = () => {
             <Form.Control
               placeholder="Enter Description Here"
               type="text"
-              value={fair.fairDescription}
+              value={editFair.fairDescription}
               name="fairDescription"
               onChange={handleChange}
             />
@@ -108,7 +121,7 @@ const EditFair = () => {
             <Form.Control
               placeholder="Enter City Here"
               type="text"
-              value={fair.fairCity}
+              value={editFair.fairCity}
               name="fairCity"
               onChange={handleChange}
             />
@@ -118,7 +131,7 @@ const EditFair = () => {
             <Form.Control
               placeholder="Enter State Here"
               type="text"
-              value={fair.fairState}
+              value={editFair.fairState}
               name="fairState"
               onChange={handleChange}
             />
@@ -128,7 +141,7 @@ const EditFair = () => {
             <Form.Control
               placeholder="Enter Zip Here"
               type="text"
-              value={fair.fairZip}
+              value={editFair.fairZip}
               name="fairZip"
               onChange={handleChange}
             />
@@ -138,7 +151,7 @@ const EditFair = () => {
             <Form.Control
               placeholder="Enter Date Here"
               type="text"
-              value={fair.fairStartDate}
+              value={editFair.fairStartDate}
               name="fairStartDate"
               onChange={handleChange}
             />
@@ -148,7 +161,7 @@ const EditFair = () => {
             <Form.Control
               placeholder="Enter Date Here"
               type="text"
-              value={fair.fairEndDate}
+              value={editFair.fairEndDate}
               name="fairEndDate"
               onChange={handleChange}
             />
@@ -158,7 +171,7 @@ const EditFair = () => {
             <Form.Control
               placeholder="Enter Image URL Here"
               type="text"
-              value={fair.fairImage}
+              value={editFair.fairImage}
               name="imageUrl"
               onChange={handleChange}
             />
@@ -170,7 +183,15 @@ const EditFair = () => {
             type="submit"
             onClick={handleSubmit}
           >
-            Add Fair Here
+            Edit Event
+          </Button>
+          <Button
+            className="btn"
+            variant="warning"
+            type="submit"
+            onClick={handleDelete}
+          >
+            Delete Event
           </Button>
         </Form>
       </div>
