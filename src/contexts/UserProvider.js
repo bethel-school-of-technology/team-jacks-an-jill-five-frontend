@@ -5,7 +5,7 @@ import UserContext from "./UserContext";
 export const UserProvider = (props) => {
 
     const [user, setUser] = useState([])
-    const baseUrl = "http://localhost:3000/api/users/";
+    const baseUrl = "http://localhost:3000/api/users";
 
 
     async function createUser(username, password, userEmail, userCity, userState, userZip, userReferral, userImage) {
@@ -24,12 +24,12 @@ export const UserProvider = (props) => {
         return await new Promise(resolve => resolve(response.data));
     }
 
-    async function getUser(userId) {
+    async function getUser() {
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myFairToken')}`
         };
 
-        const response = await axios.get(`${baseUrl}/${userId}`, { headers: myHeaders });
+        const response = await axios.get(`${baseUrl}/`, { headers: myHeaders });
         try {
             return await new Promise((resolve) => resolve(response.data));
         } catch (error) {
