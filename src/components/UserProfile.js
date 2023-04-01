@@ -5,8 +5,7 @@ import FairContext from "../contexts/FairContext";
 import {
     Button,
     ListGroup,
-    Card,
-    NavLink
+    Card
 } from "react-bootstrap";
 
 const UserProfile = () => {
@@ -37,14 +36,19 @@ const UserProfile = () => {
 
 
     const params = useParams();
-    // const navigate = useNavigate()
     const { getUser } = useContext(UserContext)
     const { getFair } = useContext(FairContext)
 
 
     useEffect(() => {
         async function fetch() {
-            await getUser(params.userId).then((user) => setUser(user))
+            await getUser()
+                .then((user) => setUser(user))
+                .catch((error) => {
+                    console.log(error);
+                    window.alert("user not logged in");
+
+                });
         }
         fetch()
     }, [params.userId]);
@@ -55,8 +59,6 @@ const UserProfile = () => {
         }
         fetch()
     }, [params.fairId]);
-
-    // const logOut = () => {}
 
     console.log(user);
 
@@ -72,7 +74,7 @@ const UserProfile = () => {
                 </Card.Body>
             </Card>
 
-            <Card key={fair.userId}>
+            <Card>
                 <Card.Header as="h5">{user.username}'s Fairs will display here.</Card.Header>
                 <Card.Body>
                     <Card.Title>{fair.fairTitle}</Card.Title>

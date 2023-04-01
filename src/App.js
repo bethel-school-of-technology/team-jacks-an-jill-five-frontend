@@ -27,7 +27,7 @@ function App() {
                 <Route index element={<Welcome />} />
                 <Route path="signup" element={<SignUp />} />
                 <Route path="signin" element={<SignIn />} />
-                <Route path="profile/:userId" element={<UserProfile />} />
+                <Route path="profile" element={<UserProfile />} />
                 <Route path="fairlist" element={<Fairlist />} />
                 <Route path="addfair" element={<AddFair />} />
                 <Route path="fairdetails/:fairId" element={<FairDetails />} />

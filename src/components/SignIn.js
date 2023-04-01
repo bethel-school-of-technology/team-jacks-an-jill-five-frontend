@@ -14,7 +14,7 @@ const SignIn = () => {
     event.preventDefault();
     signInUser(username, password)
       .then(() => {
-        navigate("/profile/:userId");
+        navigate("/profile");
       })
       .catch((error) => {
         console.log(error);
