@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import CommentContext from "./CommentContext";
+import CommentContext from '../contexts/CommentContext';
 
 export const CommentProvider = (props) => {
+
   const [comment, setComment] = useState([]);
-  const baseUrl = "http://localhost:3000/api/comment/";
+  const baseUrl = "http://localhost:3000/api/comments/";
 
   useEffect(() => {
     async function fetchData() {
@@ -18,7 +19,7 @@ export const CommentProvider = (props) => {
   }
 
   function getComment(id) {
-    return axios.get(`${baseUrl}/${id}`).then((response) => {
+    return axios.get(`${baseUrl}${id}`).then((response) => {
       return new Promise((resolve) => resolve(response.data)).catch(
         (error) => new Promise((_, reject) => reject(error.response.statusText))
       );
@@ -29,8 +30,7 @@ export const CommentProvider = (props) => {
     let myHeaders = {
       Authorization: `Bearer ${localStorage.getItem("myCommentToken")}`,
     };
-    return axios
-      .post(baseUrl, comment, { headers: myHeaders })
+    return axios.post(baseUrl, comment, { headers: myHeaders })
       .then((response) => {
         getAllComments();
         return new Promise((resolve) => resolve(response.data));

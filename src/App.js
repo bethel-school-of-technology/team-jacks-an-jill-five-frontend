@@ -15,12 +15,15 @@ import { FairProvider } from "./contexts/FairProvider";
 import FairDetails from "./components/FairDetails";
 import { CommentProvider } from "./contexts/CommentProvider";
 import UserProfile from "./components/UserProfile";
+import CommentList from "./components/CommentList";
+import AddComment from "./components/AddComment";
 
 function App() {
   return (
     <UserProvider>
       <FairProvider>
         <CommentProvider>
+        <div>
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />}>
@@ -29,6 +32,8 @@ function App() {
                 <Route path="signin" element={<SignIn />} />
                 <Route path="profile" element={<UserProfile />} />
                 <Route path="fairlist" element={<Fairlist />} />
+                <Route path="comments/new" element={<AddComment />} />
+                <Route path="comments" element={<CommentList />} />
                 <Route path="addfair" element={<AddFair />} />
                 <Route path="fairdetails/:fairId" element={<FairDetails />} />
                 <Route path="about" element={<AboutUs />} />
@@ -36,7 +41,8 @@ function App() {
               </Route>
             </Routes>
             <Footer />
-          </BrowserRouter>
+          </BrowserRouter>          
+        </div>
         </CommentProvider>
       </FairProvider>
     </UserProvider>
