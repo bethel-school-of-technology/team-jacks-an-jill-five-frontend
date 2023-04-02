@@ -19,6 +19,7 @@ function AddFair() {
     fairStartDate: "",
     fairEndDate: "",
     fairDescription: "",
+    fairWebsite: "",
     fairImage: "",
   });
 
@@ -45,11 +46,12 @@ function AddFair() {
       fair.fairZip !== "" &&
       fair.fairStartDate !== "" &&
       fair.fairEndDate !== "" &&
-      fair.fairImage
+      fair.fairWebsite !== "" &&
+      fair.fairImage !== ""
     ) {
       return createFair(fair);
     } else {
-      alert("You need to fill all fields except description & Image");
+      // alert("You need to fill all fields except description & Image");
     }
   }
 
@@ -156,7 +158,18 @@ function AddFair() {
               onChange={handleChange}
             />
           </Form.Group>
+
           </Row>
+          <Form.Group classname="mb-3">
+            <Form.Label>Fair Website</Form.Label>
+            <Form.Control
+              placeholder="Enter Fair URL here"
+              type="text"
+              value={fair.fairWebsite}
+              name="fairWebsite"
+              onChange={handleChange}
+            />
+          </Form.Group>
 
           <Form.Group classname="mb-3">
             <Form.Label>Image</Form.Label>
@@ -164,7 +177,7 @@ function AddFair() {
               placeholder="Enter Image URL Here"
               type="text"
               value={fair.fairImage}
-              name="imageUrl"
+              name="fairImage"
               onChange={handleChange}
             />
           </Form.Group>
