@@ -28,7 +28,7 @@ export const CommentProvider = (props) => {
 
   function createComment(comment) {
     let myHeaders = {
-      Authorization: `Bearer ${localStorage.getItem("myCommentToken")}`,
+      Authorization: `Bearer ${localStorage.getItem("myFairToken")}`,
     };
     return axios.post(baseUrl, comment, { headers: myHeaders })
       .then((response) => {
