@@ -1,3 +1,6 @@
+// THIS COMPONENT WAS KYLE's ATTEMPT WITH GETTING COMMENTS TO WORK
+// IGORE IF YOU WISH
+
 import React from 'react';
 import CommentContext from '../contexts/CommentContext';
 import { Link } from 'react-router-dom';

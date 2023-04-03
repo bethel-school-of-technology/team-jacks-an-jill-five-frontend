@@ -1,3 +1,7 @@
+// THIS COMPONENT WAS KYLE's ATTEMPT WITH GETTING COMMENTS TO WORK
+// IGORE IF YOU WISH
+
+
 import React, { useContext, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
