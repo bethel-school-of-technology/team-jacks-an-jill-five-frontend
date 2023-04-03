@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import FairContext from '../contexts/FairContext';
 import UserContext from './../contexts/UserContext';
-
+import { Button, Form } from 'react-bootstrap';
 
 const EditFair = () => {
 
@@ -24,11 +24,12 @@ const EditFair = () => {
     let { updateFair, getFair, deleteFair } = useContext(FairContext);
     let { getCurrentUser } = useContext(UserContext);
     // let { id, } = editFair
+    let fairId = params.fairId;
 
     useEffect(() => {
         if (fairId === undefined) return
         async function fetch() {
-            await getFair(id)
+            await getFair(fairId)
             .then((updateFair) => seteditFair(updateFair))
         }
         fetch()
