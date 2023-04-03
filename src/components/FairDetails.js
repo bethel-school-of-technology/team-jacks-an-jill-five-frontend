@@ -25,7 +25,8 @@ const FairDetails = () => {
         fairStartDate: "",
         fairEndDate: "",
         fairImage: "",
-        fairWebsite: ""
+        fairWebsite: "",
+        Comments: [],
     });
 
     useEffect(() => {
@@ -78,6 +79,16 @@ const FairDetails = () => {
                                             <h5>This Section still under construction:</h5>
                                             <CommentForm />
                                             <CommentList />
+
+                                            {fair.Comments.map((comment, index) => {
+                    return (
+                        <div>
+                            <div>{comment.commentTitle}</div>
+                            <div></div>
+                        </div>
+                    )
+                  })}
+
                                         </div>
                                     </div>
                                 </div>
