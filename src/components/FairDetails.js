@@ -65,7 +65,9 @@ const FairDetails = () => {
                                 <div className="container mb-2">
                                     <Link to={fair.fairWebsite} className="btn btn-secondary btn-sm text-center" target="_blank">Event site</Link>
                                 </div>
-
+                                <div>
+                                    <Button href={`/updatefair/${fair.fairId}`} className="btn btn-primary mx-1">Edit Fair</Button>
+                                </div>
                             </div>
                             <hr mb-3 />
                             <div className="row">
