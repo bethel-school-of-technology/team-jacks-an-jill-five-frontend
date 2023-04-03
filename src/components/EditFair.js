@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import FairContext from '../contexts/FairContext';
 import UserContext from './../contexts/UserContext';
@@ -179,7 +179,7 @@ const EditFair = () => {
             <Form.Control
               placeholder="Enter Fair URL here"
               type="text"
-              value={fair.fairWebsite}
+              value={editFair.fairWebsite}
               name="fairWebsite"
               onChange={handleChange}
             />
