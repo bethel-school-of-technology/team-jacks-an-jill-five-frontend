@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FairContext from "../contexts/FairContext";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Card, CardImg, Col, Container, Row } from "react-bootstrap";
+import SearchBar from "./SearchBar";
+import axios from "axios";
+import "./Fairlist.css";
 
 const Fairlist = () => {
 
 let navigate = useNavigate();
+
+const [wordEntered, setWordEntered] = useState("");
+const [fair, setFair] = useState([]);
+
+useEffect(() => {
+  const fetchFairs = async () => {
+    const res = await axios.get(`http://localhost:3000/api/fairs?q=${wordEntered}`);
+    setFair(res.data);
+  }
+  fetchFairs();
+}, []);
+
+const handleFilter = (event) => {
+  const searchWord = event.target.value;
+  setWordEntered(searchWord);
+};
 
   return (
     <FairContext.Consumer>
@@ -13,8 +32,16 @@ let navigate = useNavigate();
       ({ fair }) => {
         return (
           <div>
-            <h1>List of Fairs</h1>
-            <Link to="/addfair">Add New fair</Link>
+              <h1>List of Fairs</h1>
+            <div className="searchInputs">
+              <input
+                className="search"
+                placeholder="Enter a Fair..."
+                onChange={handleFilter}
+              />
+            </div>
+              <Link to="/addfair">Add New fair</Link>
+            {/* <SearchBar placeholder="Enter a Book Name..." data={fair} /> */}
             {console.log(fair)}
               <div> 
                 <Container fluid>
