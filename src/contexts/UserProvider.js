@@ -24,7 +24,7 @@ export const UserProvider = (props) => {
         return await new Promise(resolve => resolve(response.data));
     }
 
-    async function getUser() {
+    async function getCurrentUser() {
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myFairToken')}`
         };
@@ -42,7 +42,7 @@ export const UserProvider = (props) => {
             user,
             createUser,
             signInUser,
-            getUser
+            getCurrentUser
         }}>
             {props.children}
         </UserContext.Provider>

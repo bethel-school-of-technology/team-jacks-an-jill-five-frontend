@@ -36,13 +36,13 @@ const UserProfile = () => {
 
 
     const params = useParams();
-    const { getUser } = useContext(UserContext)
+    const { getCurrentUser } = useContext(UserContext)
     const { getFair } = useContext(FairContext)
 
 
     useEffect(() => {
         async function fetch() {
-            await getUser()
+            await getCurrentUser()
                 .then((user) => setUser(user))
                 .catch((error) => {
                     console.log(error);
@@ -55,7 +55,7 @@ const UserProfile = () => {
 
     useEffect(() => {
         async function fetch() {
-            await getFair(params.fairId).then((fair) => setFair(fair))
+            await getFair().then((fair) => setFair(fair))
         }
         fetch()
     }, [params.fairId]);

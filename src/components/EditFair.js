@@ -22,7 +22,7 @@ const EditFair = () => {
   
     let navigate = useNavigate();
     let { updateFair, getFair, deleteFair } = useContext(FairContext);
-    let { getUser } = useContext(UserContext);
+    let { getCurrentUser } = useContext(UserContext);
     // let { id, } = editFair
 
     useEffect(() => {
