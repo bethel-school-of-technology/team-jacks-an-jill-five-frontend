@@ -17,6 +17,7 @@ import { CommentProvider } from "./contexts/CommentProvider";
 import UserProfile from "./components/UserProfile";
 import CommentList from "./components/CommentList";
 import AddComment from "./components/AddComment";
+import EditFair from "./components/EditFair";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
                 <Route path="comments" element={<CommentList />} />
                 <Route path="addfair" element={<AddFair />} />
                 <Route path="fairdetails/:fairId" element={<FairDetails />} />
+                <Route path="updatefair/:fairid" element={<EditFair />} />
                 <Route path="about" element={<AboutUs />} />
                 <Route path="errorpage" element={<ErrorPage />} />
               </Route>
