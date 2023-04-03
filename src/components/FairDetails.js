@@ -75,7 +75,7 @@ const FairDetails = () => {
                                 <div className="container-fluid py-3" id="commentContainer">
                                     <div className="row py-1">
                                         <div className="col-12 mb-2">
-                                            <H5>This Section still under construction:</H5>
+                                            <h5>This Section still under construction:</h5>
                                             <CommentForm />
                                             <CommentList />
                                         </div>
