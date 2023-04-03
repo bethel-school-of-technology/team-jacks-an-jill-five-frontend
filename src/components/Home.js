@@ -9,7 +9,7 @@ function Home() {
   const [expanded, setExpanded] = useState(false);
   const [user, setUser] = useState()
 
-  const { getUser } = useContext(UserContext);
+  const { getCurrentUser } = useContext(UserContext);
 
   const navigate = useNavigate()
   const params = useParams();
@@ -17,7 +17,7 @@ function Home() {
 
   useEffect(() => {
     async function fetch() {
-      await getUser()
+      await getCurrentUser()
         .then((user) => setUser(user))
     }
     fetch()
@@ -76,8 +76,14 @@ function Home() {
       return (
         <>
           <Navbar.Text>
-            Hello, {user.username}!
+            Hello,
           </Navbar.Text>
+          <Link
+            to="/profile"
+            className="nav-link"
+            onClick={() => setExpanded(false)}>
+            {user.username}
+          </Link>
           <Nav>
             <Link
               to="/signin"

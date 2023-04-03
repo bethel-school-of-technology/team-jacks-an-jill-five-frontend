@@ -83,7 +83,7 @@ function AddFair() {
       <div className="form-container">
         <h1>Add Event</h1>
         <Form onSubmit={handleSubmit}>
-          <Form.Group classname="mb-3">
+          <Form.Group className="mb-3">
             <Form.Label>Name</Form.Label>
             <Form.Control
               placeholder="Event Name Here"
@@ -93,7 +93,7 @@ function AddFair() {
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group classname="mb-3">
+          <Form.Group className="mb-3">
             <Form.Label>Decription</Form.Label>
             <Form.Control
               placeholder="Enter Description Here"
@@ -137,7 +137,7 @@ function AddFair() {
           </Form.Group>
           </Row>
 
-          <Row classname="mb-3">
+          <Row className="mb-3">
           <Form.Group as={Col}>
             <Form.Label>Start Date</Form.Label>
             <Form.Control
@@ -160,7 +160,7 @@ function AddFair() {
           </Form.Group>
 
           </Row>
-          <Form.Group classname="mb-3">
+          <Form.Group className="mb-3">
             <Form.Label>Fair Website</Form.Label>
             <Form.Control
               placeholder="Enter Fair URL here"
@@ -171,7 +171,7 @@ function AddFair() {
             />
           </Form.Group>
 
-          <Form.Group classname="mb-3">
+          <Form.Group className="mb-3">
             <Form.Label>Image</Form.Label>
             <Form.Control
               placeholder="Enter Image URL Here"
