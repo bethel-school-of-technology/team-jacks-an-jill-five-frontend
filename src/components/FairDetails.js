@@ -4,7 +4,9 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 //import { Card, Container, Spinner } from "react-bootstrap";
 import CommentForm from '../components/CommentForm';
 import CommentContext from "../contexts/CommentContext";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
+import AddComment from "../components/AddComment";
+import CommentList from "./CommentList";
 
 const FairDetails = () => {
 
@@ -31,7 +33,7 @@ const FairDetails = () => {
             await getFair(params.fairId).then((fair) => setFair(fair))
         }
         fetch()
-    }, [params.fairId]);
+    }, [params.fairId] );
 
     return (
         <><div className="container padding">
@@ -63,6 +65,7 @@ const FairDetails = () => {
                                 <div className="container mb-2">
                                     <Link to={fair.fairWebsite} className="btn btn-secondary btn-sm text-center" target="_blank">Event site</Link>
                                 </div>
+
                             </div>
                             <hr mb-3 />
                             <div className="row">
@@ -72,7 +75,9 @@ const FairDetails = () => {
                                 <div className="container-fluid py-3" id="commentContainer">
                                     <div className="row py-1">
                                         <div className="col-12 mb-2">
+                                            <H5>This Section still under construction:</H5>
                                             <CommentForm />
+                                            <CommentList />
                                         </div>
                                     </div>
                                 </div>
