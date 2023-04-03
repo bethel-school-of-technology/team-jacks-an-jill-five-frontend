@@ -51,7 +51,7 @@ function AddFair() {
     ) {
       return createFair(fair);
     } else {
-      // alert("You need to fill all fields except description & Image");
+      alert("You need to fill all fields except description");
     }
   }
 

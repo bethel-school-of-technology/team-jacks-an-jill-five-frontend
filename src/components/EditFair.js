@@ -173,7 +173,16 @@ const EditFair = () => {
             />
           </Form.Group>
           </Row>
-
+          <Form.Group classname="mb-3">
+            <Form.Label>Fair Website</Form.Label>
+            <Form.Control
+              placeholder="Enter Fair URL here"
+              type="text"
+              value={fair.fairWebsite}
+              name="fairWebsite"
+              onChange={handleChange}
+            />
+          </Form.Group>
           <Form.Group classname="mb-3">
             <Form.Label>Image</Form.Label>
             <Form.Control
