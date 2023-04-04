@@ -1,6 +1,7 @@
 import React from "react";
 import BlankProfile from "../BlankProfile.png";
 import HowardHenson from "../HowardHenson.png";
+import CFoster from "../CFoster.jpg";
 
 function AboutUs(props) {
   return (
@@ -26,10 +27,10 @@ function AboutUs(props) {
                 Born and raised In Indianapolis, Indiana I’ve always had a knack
                 for creativity and problem-solving. My inquisitive nature has
                 always wanted to know the “why” things work the way they do. I
-                enjoy graphic design, reading, plaing videogames, and spending
+                enjoy graphic design, reading, playing video games, and spending
                 time with family.
               </p>
-              <a href="https://github.com/hahenson">
+              <a href="https://github.com/hahenson" rel="noreferrer" target="_blank">
                 <strong>GitHub</strong>
               </a>
             </div>
@@ -42,9 +43,9 @@ function AboutUs(props) {
               <img
                 alt="profileImage"
                 className="CardImage"
-                src={BlankProfile}
+                src={CFoster}
               />
-              <h2>Name</h2>
+              <h2>Christina Foster</h2>
               <em>
                 <p>Co Founder</p>
               </em>
@@ -52,13 +53,14 @@ function AboutUs(props) {
             <div class="card-body">
               <h3>Hi 👋</h3>
               <p>
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen book. It has survived
-                not only five centuries, but also the leap
+                I was born and raised in Eastern NC, lived in Hawaii and Florida
+                for a while, but eventually returned to my NC roots. I've always 
+                been a bit of a computer nerd and dabbled in programming and Web
+                design.  I love problem solving and creating efficient solutions
+                and designs. When I'm not coding, I enjoy time with my family, 
+                woodworking, restoring old furniture, and visiting fairs and festivals!
               </p>
-              <a href="https://github.com/">
+              <a href="https://github.com/chopefoster" rel="noreferrer" target="_blank">
                 <strong>GitHub</strong>
               </a>
             </div>
@@ -91,7 +93,7 @@ function AboutUs(props) {
                 Lorem Ipsum passages, and more recently with desktop publishing
                 software like Aldus PageMaker including versions of Lorem Ipsum.
               </p>
-              <a href="https://github.com/">
+              <a href="https://github.com/" rel="noreferrer" target="_blank">
                 <strong>GitHub</strong>
               </a>
             </div>
@@ -124,7 +126,7 @@ function AboutUs(props) {
                 Lorem Ipsum passages, and more recently with desktop publishing
                 software like Aldus PageMaker including versions of Lorem Ipsum.
               </p>
-              <a href="https://github.com/">
+              <a href="https://github.com/" rel="noreferrer" target="_blank">
                 <strong>GitHub</strong>
               </a>
             </div>
@@ -155,7 +157,7 @@ function AboutUs(props) {
               to get back to using my creativity and problem solving in the tech industry, so here
               I am.  Enjoy our WHAT's FAIR app, and I'll see you on the Ferris Wheel.
               </p>
-              <a href="https://github.com/wkhammersmith">
+              <a href="https://github.com/wkhammersmith" rel="noreferrer" target="_blank">
                 <strong>GitHub</strong>
               </a>
             </div>
