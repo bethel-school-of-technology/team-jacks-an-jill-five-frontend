@@ -27,13 +27,16 @@ const EditFair = () => {
     // let { id, } = editFair
     let fairId = params.fairId;
 
+
     useEffect(() => {
-        if (fairId === undefined) return
         async function fetch() {
             await getFair(fairId)
             .then((updateFair) => seteditFair(updateFair))
         }
-        fetch()
+        if (fairId !== undefined) {
+          fetch();
+        }
+        
         }, [fairId])
 
 
