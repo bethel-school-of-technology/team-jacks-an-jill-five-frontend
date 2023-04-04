@@ -28,9 +28,8 @@ const NewComment = () => {
     function handleSubmit(event) {
       event.preventDefault();
       createComment(newComment).then(() => {
-          navigate('/fairdetails/:fairId');
+          // navigate('/fairdetails/:fairId');
           console.log("testing add comments function")
-
         }).catch(error => {
           console.log(error);
           navigate('/signin');

@@ -21,7 +21,7 @@ const SignUp = () => {
   function handleSubmit(event) {
     event.preventDefault();
     createUser(username, password, userEmail, userCity,
-      userState, userZip, userReferral).then(() => {
+      userState, userZip, userReferral, userImage).then(() => {
         navigate('/signin');
       }).catch(error => {
         console.log(error);

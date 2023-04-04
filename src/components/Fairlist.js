@@ -58,7 +58,7 @@ const submitSearch = (event) => {
                             <Card.Title onClick={() => {
                               navigate(`/fairdetails/${f.fairId}`)
                               }}>
-                              <h2>{index+1}. {f.fairTitle}</h2>                             
+                              <h2>{f.fairTitle}</h2>                             
                             </Card.Title>
                               <Card.Text>
                               <div>
