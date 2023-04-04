@@ -37,7 +37,7 @@ function App() {
                 <Route path="comments" element={<CommentList />} />
                 <Route path="addfair" element={<AddFair />} />
                 <Route path="fairdetails/:fairId" element={<FairDetails />} />
-                <Route path="updatefair/:fairid" element={<EditFair />} />
+                <Route path="updatefair/:fairId" element={<EditFair />} />
                 <Route path="about" element={<AboutUs />} />
                 <Route path="errorpage" element={<ErrorPage />} />
               </Route>

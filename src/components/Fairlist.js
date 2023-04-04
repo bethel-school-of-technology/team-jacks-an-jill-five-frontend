@@ -13,18 +13,18 @@ let navigate = useNavigate();
 const [wordEntered, setWordEntered] = useState("");
 const [fair, setFair] = useState([]);
 
-useEffect(() => {
+const handleFilter = (event) => {
+  const searchWord = event.target.value;
+  setWordEntered(searchWord);
+};
+
+const submitSearch = (event) => {
   const fetchFairs = async () => {
     const res = await axios.get(`http://localhost:3000/api/fairs?q=${wordEntered}`);
     setFair(res.data);
   }
   fetchFairs();
-}, []);
-
-const handleFilter = (event) => {
-  const searchWord = event.target.value;
-  setWordEntered(searchWord);
-};
+}
 
   return (
     <FairContext.Consumer>
@@ -39,6 +39,7 @@ const handleFilter = (event) => {
                 placeholder="Enter a Fair..."
                 onChange={handleFilter}
               />
+              <button onClick={submitSearch}>search</button>
             </div>
               <Link to="/addfair">Add New fair</Link>
             {/* <SearchBar placeholder="Enter a Book Name..." data={fair} /> */}

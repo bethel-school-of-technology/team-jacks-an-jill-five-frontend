@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import FairContext from '../contexts/FairContext';
 import UserContext from './../contexts/UserContext';
@@ -27,13 +27,16 @@ const EditFair = () => {
     // let { id, } = editFair
     let fairId = params.fairId;
 
+
     useEffect(() => {
-        if (fairId === undefined) return
         async function fetch() {
             await getFair(fairId)
             .then((updateFair) => seteditFair(updateFair))
         }
-        fetch()
+        if (fairId !== undefined) {
+          fetch();
+        }
+        
         }, [fairId])
 
 
