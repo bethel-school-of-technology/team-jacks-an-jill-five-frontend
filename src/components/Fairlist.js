@@ -14,16 +14,24 @@ const [wordEntered, setWordEntered] = useState("");
 const [fair, setFair] = useState([]);
 
 const handleFilter = (event) => {
-  const searchWord = event.target.value;
+  const searchWord = event.target.value.toLowerCase();
   setWordEntered(searchWord);
 };
+
+// useEffect(() => {
+//   const fetchFairs = async () => {
+//     const res = await axios.get(`http://localhost:3000/api/fairs?q=${wordEntered}`);
+//     setFair(res.data);
+//   };
+//   if (fair.length === 0 || fair.length > 2) fetchFairs();
+// }, [fair]);
 
 const submitSearch = (event) => {
   const fetchFairs = async () => {
     const res = await axios.get(`http://localhost:3000/api/fairs?q=${wordEntered}`);
     setFair(res.data);
-  }
-  fetchFairs();
+  };
+  if (fair.length === 0 || fair.length > 2) fetchFairs();
 }
 
   return (
