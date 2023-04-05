@@ -62,7 +62,7 @@ const submitSearch = (event) => {
                             </Card.Title>
                               <Card.Text>
                               <div>
-                                  <h5>{f.fairCity},{f.fairState}</h5>
+                                  <h5>{f.fairCity}, {f.fairState}</h5>
                                   <p>{f.fairStartDate}-{f.fairEndDate}</p>
                               </div>
                               </Card.Text>
