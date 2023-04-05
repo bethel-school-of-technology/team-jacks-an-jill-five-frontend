@@ -12,7 +12,8 @@ import CommentContext from "../contexts/CommentContext";
 
 const NewComment = () => {
     const [newComment, setNewComment] = useState({
-        commentTitle: ""
+        commentTitle: "",
+        FairFairId: ""
     })
   
     let { createComment } = useContext(CommentContext);
@@ -27,7 +28,8 @@ const NewComment = () => {
     function handleSubmit(event) {
       event.preventDefault();
       createComment(newComment).then(() => {
-          navigate('/fairdetails/:fairId');
+          // navigate('/fairdetails/:fairId');
+          console.log("testing add comments function")
         }).catch(error => {
           console.log(error);
           navigate('/signin');
@@ -38,12 +40,16 @@ const NewComment = () => {
  <div>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
-          <Form.Control placeholder="type comment here" type="text"
+          <Form.Control placeholder="type your comment here (must be signed in)" type="text"
             name="commentTitle" value={newComment.commentTitle} onChange={handleChange} />
         </Form.Group>
 
-        <br></br>
-        <Button type="submit">submit comment</Button>
+        <Form.Group>
+          <Form.Control placeholder="Fair ID (we're working on populating this automatically" type="text"
+            name="FairFairId" value={newComment.FairFairId} onChange={handleChange} />
+        </Form.Group>
+
+        <Button classname= "btn" variant="success" type="submit">submit comment</Button>
       </Form>
     </div>
 

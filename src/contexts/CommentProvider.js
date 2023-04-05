@@ -7,12 +7,12 @@ export const CommentProvider = (props) => {
   const [comment, setComment] = useState([]);
   const baseUrl = "http://localhost:3000/api/comments/";
 
-  useEffect(() => {
-    async function fetchData() {
-      await getAllComments();
-    }
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     await getAllComments();
+  //   }
+  //   fetchData();
+  // }, []);
 
   function getAllComments() {
     return axios.get(baseUrl).then((response) => setComment(response.data));
@@ -40,7 +40,7 @@ export const CommentProvider = (props) => {
   // NOT confident in this code for updateComment. Couldn't find example in lessons.
   function updateComment(comment) {
     let myHeaders = {
-      Authorization: `Bearer ${localStorage.getItem("myCommentToken")}`,
+      Authorization: `Bearer ${localStorage.getItem("myFairToken")}`,
     };
     return axios
       .put(baseUrl, comment, { headers: myHeaders })
@@ -53,7 +53,7 @@ export const CommentProvider = (props) => {
   // NOT confident in this code for deleteComment. Couldn't find example in lessons.
   function deleteComment(id) {
     let myHeaders = {
-      Authorization: `Bearer ${localStorage.getItem("myCommentToken")}`,
+      Authorization: `Bearer ${localStorage.getItem("myFairToken")}`,
     };
     return axios
       .delete(baseUrl, comment, { headers: myHeaders })

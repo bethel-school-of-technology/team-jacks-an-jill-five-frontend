@@ -73,25 +73,26 @@ const FairDetails = () => {
                             <hr mb-3 />
                             <div className="row">
                                 <div className="col-lg-6 text-center">
-                                    <h3 className="fairComment">Comments</h3>
+                                    {/* <h3 className="fairComment">Comments</h3> */}
                                 </div>
                                 <div className="container-fluid py-3" id="commentContainer">
                                     <div className="row py-1">
                                         <div className="col-12 mb-2">
-                                            <h5>This Section still under construction:</h5>
-                                            <CommentForm />
-                                            <CommentList />
+                                            <h5>Comments about the {fair.fairTitle} --- FairID #{fair.fairId}</h5>
+                                            {/* <CommentForm /> */}
 
                                             {fair.Comments.map((comment, index) => {
                     return (
                         <div>
-                            <div>{comment.commentTitle}</div>
+                            <div>{index+1}) {comment.commentTitle}</div>
                             <div></div>
                         </div>
                     )
+
                   })}
 
                                         </div>
+                                        <div><AddComment /></div>
                                     </div>
                                 </div>
                             </div>
