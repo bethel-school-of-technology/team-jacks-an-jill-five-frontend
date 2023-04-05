@@ -322,3 +322,37 @@ border: solid black 1px;
   color: white;
   height: 20px;
 }
+
+#fairCardImage {
+   box-shadow: 2px 2px 3px;
+  max-height: 280px; 
+  width: 100%;
+  object-fit: fill;
+}
+
+#fairlistCard {
+ height: 500px;
+ width: 400px;
+ align-content: space-evenly;
+ background-color: #f9f1fe;
+
+}
+
+#fairlistCard:hover {
+  box-shadow: 4px 4px 5px #4A148C;
+}
+
+#fairCardTitle {
+  text-align: center;  
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#detailsButton {
+  justify-content: right;
+  border-color: #2621A6;
+}
+
+.embed-responsive .card-img-top {
+  object-fit: cover;
+}
