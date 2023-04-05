@@ -124,9 +124,7 @@ function AddFair() {
               name="fairState"
               onChange={handleChange}
             /> */}
-            <Form.Select  
-              placeholder="Enter State Here"
-              type="text"
+            <Form.Select  defaultValue="Choose..."
               value={fair.fairState}
               name="fairState"
               onChange={handleChange}>
@@ -242,7 +240,7 @@ function AddFair() {
           <Button
             className="btn"
             variant="warning"
-            type="submit"
+            type="button"
             onClick={handleSubmit}
           >
             Add Fair Here
