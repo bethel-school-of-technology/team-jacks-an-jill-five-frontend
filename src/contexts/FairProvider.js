@@ -6,6 +6,7 @@ export const FairProvider = (props) => {
   const [fair, setFair] = useState([]);
   const baseUrl = "http://localhost:3000/api/fairs";
 
+
   useEffect(() => {
     async function getFairs() {
       await getAllFairs();
@@ -19,8 +20,8 @@ export const FairProvider = (props) => {
     });
   }
 
-  function getFair(id) {
-    return axios.get(`${baseUrl}/${id}`).then((response) => {
+  function getFair(fairId) {
+    return axios.get(`${baseUrl}/${fairId}`).then((response) => {
       return new Promise((resolve) => resolve(response.data)).catch(
         (error) => new Promise((_, reject) => reject(error.response.statusText))
       );
@@ -39,24 +40,31 @@ export const FairProvider = (props) => {
     }
 
     function updateFair(fair) {
+
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myFairToken')}`
         };
-        return axios.put(baseUrl + fair.fairId, fair, {headers: myHeaders})
+        return axios.put(`${baseUrl}/${fair.fairId}`, fair, {headers: myHeaders})
         .then(response => {
+            console.log(response.data);
             getAllFairs()
             return new Promise((resolve) => resolve(response.data))
+        }, err => {
+          localStorage.removeItem('myFairToken');
         })
  }
 
-    function deleteFair(id) {
+    function deleteFair(fairId) {
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myFairToken')}`
         };
-        return axios.delete(baseUrl + id, {headers: myHeaders})
+        return axios.delete(`${baseUrl}/${fairId}` , {headers: myHeaders})
         .then(response => {
+          console.log(response.data);
             getAllFairs()
             return new Promise((resolve) => resolve(response.data))
+        }, err => {
+          localStorage.removeItem('myFairToken');
         })
     }
 
