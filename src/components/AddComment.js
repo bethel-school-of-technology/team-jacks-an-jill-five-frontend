@@ -14,7 +14,7 @@ import FairContext from '../contexts/FairContext';
 
 const NewComment = () => {
 
-  let { getFair } = useContext(FairContext);
+  // let { getFair } = useContext(FairContext);
   // let { getCurrentUser } = useContext(UserContext);
   let params = useParams()
 
@@ -23,7 +23,6 @@ const NewComment = () => {
         commentTitle: "",
         fairId: ""
     })
-
     let fairId = params.fairId;
     // useEffect(() => {
     //   async function fetch() {
@@ -50,7 +49,6 @@ const NewComment = () => {
       event.preventDefault();
       createComment(newComment).then(() => {
           navigate(`/fairdetails/${fairId}`);
-          console.log("testing add comments function" + (fairId));
           console.log("here is your fair ID:" + (params.fairId))
         }).catch(error => {
           console.log(error);
