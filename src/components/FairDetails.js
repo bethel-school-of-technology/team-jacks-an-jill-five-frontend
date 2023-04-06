@@ -34,7 +34,7 @@ const FairDetails = () => {
             await getFair(params.fairId).then((fair) => setFair(fair))
         }
         fetch()
-    }, [params.fairId] );
+    }, [params.fairId]);
 
     return (
         <><div className="container padding">
@@ -64,7 +64,7 @@ const FairDetails = () => {
                             </div>
                             <div className="row">
                                 <div className="container mb-2">
-                                    <Link to={fair.fairWebsite} className="btn btn-secondary btn-sm text-center" target="_blank">Event site</Link>
+                                    <Link to={fair.fairWebsite} className="btn btn-secondary btn-sm text-center" rel="noreferrer" target="_blank">Event site</Link>
                                 </div>
                                 <div>
                                     <Button href={`/updatefair/${fair.fairId}`} className="btn btn-primary mx-1">Edit Fair</Button>
@@ -82,14 +82,13 @@ const FairDetails = () => {
                                             {/* <CommentForm /> */}
 
                                             {fair.Comments.map((comment, index) => {
-                    return (
-                        <div>
-                            <div>{index+1}) {comment.commentTitle}</div>
-                            <div></div>
-                        </div>
-                    )
-
-                  })}
+                                                return (
+                                                    <div>
+                                                        <div>{comment.commentTitle}</div>
+                                                        <div></div>
+                                                    </div>
+                                                )
+                                            })}
 
                                         </div>
                                         <div><AddComment /></div>
