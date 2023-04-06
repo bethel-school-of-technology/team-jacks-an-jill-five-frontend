@@ -72,7 +72,7 @@ function AboutUs(props) {
                 festivals!
               </p>
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/in/fosterhopec/"
                 rel="noreferrer"
                 target="_blank"
               >
