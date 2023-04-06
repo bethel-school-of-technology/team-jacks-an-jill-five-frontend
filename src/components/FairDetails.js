@@ -78,13 +78,13 @@ const FairDetails = () => {
                                 <div className="container-fluid py-3" id="commentContainer">
                                     <div className="row py-1">
                                         <div className="col-12 mb-2">
-                                            <h5>Comments about the {fair.fairTitle} --- FairID #{fair.fairId}</h5>
+                                            <h5>Comments about the {fair.fairTitle}</h5>
                                             {/* <CommentForm /> */}
 
                                             {fair.Comments.map((comment, index) => {
                                                 return (
                                                     <div>
-                                                        <div>{comment.commentTitle}</div>
+                                                        <div>{index + 1}. {comment.commentTitle}</div>
                                                         <div></div>
                                                     </div>
                                                 )
