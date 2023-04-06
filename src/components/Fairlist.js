@@ -58,23 +58,23 @@ const submitSearch = (event) => {
                   {fair.map((f, index) => {
                     return (
                         <Col lg={true}  >
-                          <Card key={f.fairId} style={{ width: '18rem' }} onClick={() => {
-                            navigate(`/fairdetails/${f.fairId}`)
+                          <Card key={f.fairId} id="fairlistCard" style={{ width: '18rem' }} onClick={() => {
+                            navigate(`/fairdetails/${f.fairId}`) 
                             }}>
-                            <Card.Body>
-                            <CardImg variant="top" src={f.fairImage} thumbnail/>
+                            <Card.Body embed-responsive className="embed-responsive-4by3" >
+                            <CardImg variant="top" src={f.fairImage} id="fairCardImage" className="img-fluid rounded"/>
                             <Card.Title onClick={() => {
                               navigate(`/fairdetails/${f.fairId}`)
                               }}>
-                              <h2>{f.fairTitle}</h2>                             
+                              <h3 id="fairCardTitle">{f.fairTitle}</h3>                             
                             </Card.Title>
                               <Card.Text>
                               <div>
-                                  <h5>{f.fairCity}, {f.fairState}</h5>
-                                  <p>{f.fairStartDate}-{f.fairEndDate}</p>
+                                  <h5 id="fairCardLocation">{f.fairCity},{f.fairState}</h5>
+                                  <p id="fairCardDates">{f.fairStartDate}-{f.fairEndDate}</p>
                               </div>
                               </Card.Text>
-                              <Link to={`/fairdetails/${f.fairId}`} className="btn btn-primary mx-1">Details</Link>
+                              <Link to={`/fairdetails/${f.fairId}`} className="btn btn-md btn-outline-secondary mx-1" id="detailsButton">Details</Link>
                             </Card.Body>
                           </Card>
                         </Col>
