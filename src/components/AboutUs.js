@@ -97,32 +97,29 @@ function AboutUs(props) {
                 className="CardImage"
                 src={BlankProfile}
               />
-              <h2>Name</h2>{" "}
+              <h2>Joshua Betrand</h2>{" "}
               <em>
                 <p>Co Founder</p>
               </em>
             </div>
-            <div class="card-body">
+            <div class="card-body"> 
               <h3>Hi 👋</h3>
               <p>
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen book. It has survived
-                not only five centuries, but also the leap into electronic
-                typesetting, remaining essentially unchanged. It was popularised
-                in the 1960s with the release of Letraset sheets containing
-                Lorem Ipsum passages, and more recently with desktop publishing
-                software like Aldus PageMaker including versions of Lorem Ipsum.
+              Hi there! I'm a full stack engineer with a passion for problem-solving and bringing innovative solutions to the table. 
+              Growing up, I knew I was destined to be an engineer and even built my first computer at a young age.
+              My journey has taken me from electrical engineering to software engineering, where I've honed my skills in both front-end and back-end development.
+              In my free time, I enjoy indulging my creative side as a musician, playing the drums since I was five. 
+              I also like to stay active and play basketball regularly. 
+              Additionally, I have a keen interest in day trading and coding on the side, always looking for new opportunities to learn and grow.
               </p>
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/in/joshua-betrand"
                 rel="noreferrer"
                 target="_blank"
               >
                 <img alt="socialImage" src={LinkedIn} style={{ width: 30 }} />
               </a>
-              <a href="https://github.com/" rel="noreferrer" target="_blank">
+              <a href="https://github.com/Jbetrand10" rel="noreferrer" target="_blank">
                 <img alt="socialImage" src={githubmark} style={{ width: 30 }} />
               </a>
             </div>
