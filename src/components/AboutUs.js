@@ -198,7 +198,7 @@ function AboutUs(props) {
                 our WHAT's FAIR app, and I'll see you on the Ferris Wheel.
               </p>
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/in/kylehammersmith/"
                 rel="noreferrer"
                 target="_blank"
               >
