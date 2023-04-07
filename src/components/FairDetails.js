@@ -38,10 +38,6 @@ const FairDetails = () => {
         async function fetch() {
             await getCurrentUser()
                 .then((user) => setUser(user))
-                .catch((error) => {
-                    console.log(error);
-                    window.alert("user not logged in");
-                });
         }
         fetch()
     }, [params.userId]);
