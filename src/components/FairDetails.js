@@ -56,6 +56,17 @@ const FairDetails = () => {
         }
     }
 
+    function handleDelete() {
+        deleteFair(fair.fairId).then(() => {
+            navigate('/fairlist')
+            console.log("Hey Bro!")
+        }).catch(error => {
+            console.log(error);
+            alert('Error: ' + error)
+        })
+    }
+
+
     useEffect(() => {
         async function fetch() {
             await getFair(params.fairId).then((fair) => setFair(fair))
@@ -66,16 +77,16 @@ const FairDetails = () => {
     return (
         <>
             <div className="container">
-                <div className="row text-center padding">
+                <div className="row text-center">
                     <div className="col-12" id="detailTitle">
-                        <h1 className="display-4">{fair.fairTitle} <span />
-                            {isOwner() && <Link to={`/updatefair/${fair.fairId}`} class="fs-2" id="editIcon"><i class="bi bi-pencil-square"></i></Link>}
-                        </h1>
+                        <h1 className="display-4">{fair.fairTitle}</h1>
+                        {isOwner() && <Link to={`/updatefair/${fair.fairId}`} class="fs-2" id="editIcon"><i class="bi bi-pencil-square"></i></Link>}
+                        {isOwner() && <a class="fs-2" id="delFairBtn"><i class="bi bi-trash"></i></a>}
                     </div>
                 </div>
             </div>
 
-            <div className="container-fluid padding ">
+            <div className="container-fluid">
                 <div className="row padding">
                     <div className="col-lg-6 text-center" id="detailLocation">
                         <h4>{fair.fairCity}, {fair.fairState}</h4>

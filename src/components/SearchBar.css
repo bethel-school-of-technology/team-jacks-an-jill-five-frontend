@@ -1,6 +1,7 @@
 .searchInputs {
-    margin-top: 105px;
+    /* margin-top: 105px; */
     display: flex;
+    margin-bottom: 10px;
   }
   
   .search input {
