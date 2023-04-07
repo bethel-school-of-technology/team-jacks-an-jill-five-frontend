@@ -14,25 +14,24 @@ function AboutUs(props) {
       <h1 className="aboutHeading">The Creators of What's Fair</h1>
       <div class="row">
         <div class="pricing-column col-lg-4">
-          <div class="card">
+          <div id="borderColor" class="card">
             <div class="card-header">
               <img
                 alt="profileImage"
                 className="CardImage"
                 src={HowardHenson}
               />
-              <h2>Howard</h2>
+              <h2>Howard Henson</h2>
               <p>Co Founder</p>
             </div>
             <div class="card-body">
               <h3>Hi 👋</h3>
-              <i class="bi-alarm" />
               <p>
                 Born and raised In Indianapolis, Indiana I’ve always had a knack
-                for creativity and problem-solving. My inquisitive nature has
-                always wanted to know the “why” things work the way they do. I
-                enjoy graphic design, reading, playing video games, and spending
-                time with family.
+                for creativity through graphic design and problem-solving. My
+                inquisitive nature has always wanted to know the “why” things
+                work the way they do. I enjoy learning, reading, playing video
+                games, and spending time with family.
               </p>
               <a
                 href="https://www.linkedin.com/in/howardhenson/"
@@ -103,15 +102,20 @@ function AboutUs(props) {
                 <p>Co Founder</p>
               </em>
             </div>
-            <div class="card-body"> 
+            <div class="card-body">
               <h3>Hi 👋</h3>
               <p>
-              Hi there! I'm a full stack engineer with a passion for problem-solving and bringing innovative solutions to the table. 
-              Growing up, I knew I was destined to be an engineer and even built my first computer at a young age.
-              My journey has taken me from electrical engineering to software engineering, where I've honed my skills in both front-end and back-end development.
-              In my free time, I enjoy indulging my creative side as a musician, playing the drums since I was five. 
-              I also like to stay active and play basketball regularly. 
-              Additionally, I have a keen interest in day trading and coding on the side, always looking for new opportunities to learn and grow.
+                Hi there! I'm a full stack engineer with a passion for
+                problem-solving and bringing innovative solutions to the table.
+                Growing up, I knew I was destined to be an engineer and even
+                built my first computer at a young age. My journey has taken me
+                from electrical engineering to software engineering, where I've
+                honed my skills in both front-end and back-end development. In
+                my free time, I enjoy indulging my creative side as a musician,
+                playing the drums since I was five. I also like to stay active
+                and play basketball regularly. Additionally, I have a keen
+                interest in day trading and coding on the side, always looking
+                for new opportunities to learn and grow.
               </p>
               <a
                 href="https://www.linkedin.com/in/joshua-betrand"
@@ -120,7 +124,11 @@ function AboutUs(props) {
               >
                 <img alt="socialImage" src={LinkedIn} style={{ width: 30 }} />
               </a>
-              <a href="https://github.com/Jbetrand10" rel="noreferrer" target="_blank">
+              <a
+                href="https://github.com/Jbetrand10"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <img alt="socialImage" src={githubmark} style={{ width: 30 }} />
               </a>
             </div>
@@ -130,11 +138,7 @@ function AboutUs(props) {
         <div class="pricing-column col-md-6">
           <div class="card">
             <div class="card-header">
-              <img
-                alt="profileImage"
-                className="CardImage"
-                src={Samuel}
-              />
+              <img alt="profileImage" className="CardImage" src={Samuel} />
               <h2>Samuel Akins</h2>{" "}
               <em>
                 <p>Co Founder</p>
@@ -143,14 +147,15 @@ function AboutUs(props) {
             <div class="card-body">
               <h3>Hi 👋</h3>
               <p>
-               Hello! I live in southwest Ohio with my wife and two young kids. 
-               I found out about Bethel College through Anthony ONeal and Dave Ramsey, 
-               and got excited dreaming about what a career in Tech would mean for my family! 
-               I am excited about my journey as a software engineer, and I'm grateful for everyone who has helped get to this point!
-               In my spare time I love being with my wife and kids, teaching my kids how to make great coffee ( they don't drink any! ), 
-               and running. 
-               
-               <br></br>Ps- I'm only at the Fair for the food!
+                Hello! I live in southwest Ohio with my wife and two young kids.
+                I found out about Bethel College through Anthony ONeal and Dave
+                Ramsey, and got excited dreaming about what a career in Tech
+                would mean for my family! I am excited about my journey as a
+                software engineer, and I'm grateful for everyone who has helped
+                get to this point! In my spare time I love being with my wife
+                and kids, teaching my kids how to make great coffee ( they don't
+                drink any! ), and running.
+                <br></br>Ps- I'm only at the Fair for the food!
               </p>
               <a
                 href="https://www.linkedin.com"
