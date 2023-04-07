@@ -247,61 +247,9 @@ h1 {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.custom-search-botton {
-  position: absolute;
-  right: 3px;
-  top: 3px;
-  bottom: 3px;
-  border: 0;
+.custom-search-button {
+  margin-top: 3px;
   background: #f5ba13;
-  color: #fff;
-  outline: none;
-  margin: 0;
-  padding: 0 15px;
-  border-radius: 100px;
-  z-index: 2;
-}
-
-/* Older leaving Comment box */
-.LeaveComment {
-  position: absolute;
-  right: 18px;
-  bottom: -18px;
-  background: #f5ba13;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  outline: none;
-}
-
-.CommentForm .CommentInput,
-.CommentForm .CommentTextArea {
-  width: 100%;
-  border: none;
-  padding: 4px;
-  outline: none;
-  font-size: 1.2em;
-  font-family: inherit;
-  resize: none;
-}
-
-.CommentForm .CommentButton {
-  right: 100px;
-  bottom: -18px;
-  background: #f5ba13;
-  color: black;
-  border: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  outline: none;
-}
-
-.CommentButton {
-  color: #f5ba13;
   border: none;
   width: 45px;
   height: 45px;
@@ -309,10 +257,7 @@ h1 {
   cursor: pointer;
   outline: none;
   font-weight: bolder;
-}
-
-#commentContainer {
-  align-content: center;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.2) 0px 15px 12px;
 }
 
 /* About Us section */
@@ -413,15 +358,27 @@ h1 {
 /* Fair Details page styling */
 
 #fairImage {
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 420px;
   max-height: 420px;
+  transition: all 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 19px 38px, rgba(0, 0, 0, 0.5) 0px 15px 12px;
+}
+
+#fairImage:hover {
+  transform: scale(1.15);
+}
+
+#div3 {
+  margin-top: 10px;
 }
 
 #detailTitle {
   padding: 10px;
+  font-weight: bold;
 }
 
 #detailLocation {
@@ -449,10 +406,10 @@ h1 {
   align-items: center;
 }
 
-#divEditLink {
-  text-align: center;
+#canEdit {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 #divWebLink {
@@ -461,3 +418,35 @@ h1 {
   align-items: center;
 }
 
+#editIcon {
+  color:#42275a;
+}
+
+.btn-secondary {
+  background-color: #42275a;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 19px 38px, rgba(0, 0, 0, 0.2) 0px 15px 12px;
+}
+
+.btn-secondary:hover {
+  background-color: #c669ff;
+}
+
+.btn-outline-secondary {
+  color: #42275a;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.2) 0px 15px 12px;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #42275a;
+}
+
+.btn-primary {
+  background-color: #42275a;
+  border: 1px #42275a;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.2) 0px 15px 12px;
+}
+
+.btn-primary:hover {
+  background-color: #c669ff;
+  border: 2px solid #42275a;
+}
