@@ -24,27 +24,27 @@ function App() {
     <UserProvider>
       <FairProvider>
         <CommentProvider>
-        <div>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Home />}>
-                <Route index element={<Welcome />} />
-                <Route path="signup" element={<SignUp />} />
-                <Route path="signin" element={<SignIn />} />
-                <Route path="profile" element={<UserProfile />} />
-                <Route path="fairlist" element={<Fairlist />} />
-                <Route path="comments/new" element={<AddComment />} />
-                <Route path="comments" element={<CommentList />} />
-                <Route path="addfair" element={<AddFair />} />
-                <Route path="fairdetails/:fairId" element={<FairDetails />} />
-                <Route path="updatefair/:fairId" element={<EditFair />} />
-                <Route path="about" element={<AboutUs />} />
-                <Route path="errorpage" element={<ErrorPage />} />
-              </Route>
-            </Routes>
-            <Footer />
-          </BrowserRouter>          
-        </div>
+          <div>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Home />}>
+                  <Route index element={<Welcome />} />
+                  <Route path="signup" element={<SignUp />} />
+                  <Route path="signin" element={<SignIn />} />
+                  <Route path="profile" element={<UserProfile />} />
+                  <Route path="fairlist" element={<Fairlist />} />
+                  <Route path="comments/new" element={<AddComment />} />
+                  <Route path="comments" element={<CommentList />} />
+                  <Route path="addfair" element={<AddFair />} />
+                  <Route path="fairdetails/:fairId" element={<FairDetails />} />
+                  <Route path="updatefair/:fairId" element={<EditFair />} />
+                  <Route path="about" element={<AboutUs />} />
+                  <Route path="*" element={<ErrorPage />} />
+                </Route>
+              </Routes>
+              <Footer />
+            </BrowserRouter>
+          </div>
         </CommentProvider>
       </FairProvider>
     </UserProvider>
