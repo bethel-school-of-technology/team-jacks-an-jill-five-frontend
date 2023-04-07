@@ -8,85 +8,89 @@ import "./Fairlist.css";
 
 const Fairlist = () => {
 
-let navigate = useNavigate();
+  let navigate = useNavigate();
 
-let { searchFairs } = useContext(FairContext);
+  let { searchFairs } = useContext(FairContext);
 
-const [wordEntered, setWordEntered] = useState("");
+  const [wordEntered, setWordEntered] = useState("");
 
-const handleFilter = (event) => {
-  const searchWord = event.target.value.toLowerCase();
-  setWordEntered(searchWord);
-};
+  const handleFilter = (event) => {
+    const searchWord = event.target.value.toLowerCase();
+    setWordEntered(searchWord);
+  };
 
-// useEffect(() => {
-//   const fetchFairs = async () => {
-//     const res = await axios.get(`http://localhost:3000/api/fairs?q=${wordEntered}`);
-//     setFair(res.data);
-//   };
-//   if (fair.length === 0 || fair.length > 2) fetchFairs();
-// }, [fair]);
+  // useEffect(() => {
+  //   const fetchFairs = async () => {
+  //     const res = await axios.get(`http://localhost:3000/api/fairs?q=${wordEntered}`);
+  //     setFair(res.data);
+  //   };
+  //   if (fair.length === 0 || fair.length > 2) fetchFairs();
+  // }, [fair]);
 
-const submitSearch = (event) => {
-  searchFairs(wordEntered);
-}
+  const submitSearch = (event) => {
+    searchFairs(wordEntered);
+  }
 
   return (
     <FairContext.Consumer>
-    {
-      ({ fair }) => {
-        return (
-          <div>
+      {
+        ({ fair }) => {
+          return (
+            <div>
               <h1>List of Fairs</h1>
-            <div className="searchInputs">
-              <input
-                className="search"
-                placeholder="Enter a Fair..."
-                onChange={handleFilter}
-              />
-              <button onClick={submitSearch}>search</button>
-            </div>
-              <Link to="/addfair">Add New fair</Link>
-            {/* <SearchBar placeholder="Enter a Book Name..." data={fair} /> */}
-            {console.log(fair)}
-              <div> 
+              <div className="container padding" id="divSearch">
+                <div className="searchInputs">
+                  <input
+                    className="search"
+                    placeholder="Enter a Fair..."
+                    onChange={handleFilter}
+                  />
+                  <button onClick={submitSearch}>search</button>
+                </div>
+              </div>
+              <div className="container padding" id="addFairButton">
+                <Button href="/addfair">Add New fair</Button>
+              </div>
+              {/* <SearchBar placeholder="Enter a Book Name..." data={fair} /> */}
+              {console.log(fair)}
+              <div>
                 <Container fluid>
                   <Row xs={1} md={2} lg={3} xl={4} className="g-4"  >
-                  {fair.map((f, index) => {
-                    return (
+                    {fair.map((f, index) => {
+                      return (
                         <Col fluid id="listCol">
                           <Card key={f.fairId} id="fairlistCard" style={{ width: '18rem' }} onClick={() => {
-                            navigate(`/fairdetails/${f.fairId}`) 
-                            }}>
+                            navigate(`/fairdetails/${f.fairId}`)
+                          }}>
                             <Card.Body embed-responsive className="embed-responsive-4by3" >
-                            <div className="divFairImg">
-                            <Card.Img src={f.fairImage} className="img-top"/>
-                            </div>
-                            <Card.Title onClick={() => {
-                              navigate(`/fairdetails/${f.fairId}`)
+                              <div className="divFairImg">
+                                <Card.Img src={f.fairImage} className="img-top" />
+                              </div>
+                              <Card.Title onClick={() => {
+                                navigate(`/fairdetails/${f.fairId}`)
                               }}>
-                              <h4 id="fairCardTitle">{f.fairTitle}</h4>                             
-                            </Card.Title>
+                                <h4 id="fairCardTitle">{f.fairTitle}</h4>
+                              </Card.Title>
                               <Card.Text>
-                              <div>
+                                <div>
                                   <h5 id="fairCardLocation">{f.fairCity},{f.fairState}</h5>
                                   <p id="fairCardDates">{f.fairStartDate}-{f.fairEndDate}</p>
-                              </div>
+                                </div>
                               </Card.Text>
                               <div className="viewButton">
-                              <Link to={`/fairdetails/${f.fairId}`} className="btn btn-md btn-outline-secondary mx-1" id="detailsButton">Details</Link>
+                                <Link to={`/fairdetails/${f.fairId}`} className="btn btn-md btn-outline-secondary mx-1" id="detailsButton">Details</Link>
                               </div>
                             </Card.Body>
                           </Card>
                         </Col>
-                    )
-                  })}
-                </Row>
-              </Container>
+                      )
+                    })}
+                  </Row>
+                </Container>
+              </div>
             </div>
-          </div>
-        );
-      }}
+          );
+        }}
     </FairContext.Consumer>
   );
 };
