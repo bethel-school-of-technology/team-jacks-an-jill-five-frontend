@@ -1,29 +1,31 @@
-body{
+body {
   background-color: lightgoldenrodyellow;
   max-height: 100%;
 }
 
 /* Sign up button on welcome page */
-.WelcomeBtn{
+.WelcomeBtn {
   margin-bottom: 20px;
   background-color: #4A148C;
   color: whitesmoke;
   font-size: 20px;
   border-radius: 35px;
   padding: 10px;
-  }
+}
 
-  /* What's Fair Title on Welcome Page */
-  .title{
-    font-weight: 700;
-  }
-  /* Phone image on Welcome Page */
-.Phone{
+/* What's Fair Title on Welcome Page */
+.title {
+  font-weight: 700;
+}
+
+/* Phone image on Welcome Page */
+.Phone {
   margin: 24px;
   rotate: 5deg;
   filter: drop-shadow(0 0 2px black)
 }
-footer{
+
+footer {
   text-align: center;
   bottom: 0;
   width: 100%;
@@ -31,27 +33,29 @@ footer{
   position: relative;
   min-height: 100%;
 }
-h1{
+
+h1 {
   font-weight: bolder
 }
+
 /* 3 emojis & conent on Welcome Page */
-.itemBox{
-padding: 7% 15%;
-text-align: center;
-padding-left: 20px;
-padding-right: 20px;
+.itemBox {
+  padding: 7% 15%;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
+
 /* 3 emojis & conent on Welcome Page */
-.emoji{
+.emoji {
   margin: 0 auto 20px;
   font-size: 400%;
 }
 
 /* weather api div */
 
-
 .WeatherAPI {
-  background-image: linear-gradient(#42275a , #734b6d);
+  background-image: linear-gradient(#42275a, #734b6d);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -64,13 +68,15 @@ padding-right: 20px;
   padding: 10px;
 
 }
+
 /* style of location(state) on welcome page */
 .location {
-font-weight: bolder;
- font-Size: 30px;
+  font-weight: bolder;
+  font-Size: 30px;
 }
+
 /* style of temp number on welcome page */
-.tempBox{
+.tempBox {
   display: flex;
   height: 45px;
   align-items: center;
@@ -78,9 +84,10 @@ font-weight: bolder;
   font-size: 30px;
   font-weight: 600;
 }
+
 /* Check Temp Button */
-.APIbutton{
-  color:black;
+.APIbutton {
+  color: black;
   font-weight: 600;
   background-color: #f5ba13;
   padding: 1px;
@@ -89,17 +96,23 @@ font-weight: bolder;
   margin-left: 10px;
   color: whitesmoke;
   background: linear-gradient(45deg, #2621A6, #c669ff);
-animation: hue-rotate 2s linear infinite alternate;}
-@keyframes hue-rotate{
-  to {filter: hue-rotate(90deg);}
-} 
- /* style of input field on welcome page */ 
-.searchbox{
-height: 20px;
-margin-bottom: 15px;
+  animation: hue-rotate 2s linear infinite alternate;
 }
- /* style of weather description on welcome page */ 
-.weatherDescription{
+
+@keyframes hue-rotate {
+  to {
+    filter: hue-rotate(90deg);
+  }
+}
+
+/* style of input field on welcome page */
+.searchbox {
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+/* style of weather description on welcome page */
+.weatherDescription {
   font-size: 30px;
 }
 
@@ -108,7 +121,8 @@ margin-bottom: 15px;
   font-style: italic;
   font-size: 18px;
 }
- /* text disappearing/appearing */ 
+
+/* text disappearing/appearing */
 .rotatingText-adjective {
   font-family: "Open Sans", sans-serif;
   font-size: 15px;
@@ -119,35 +133,40 @@ margin-bottom: 15px;
   padding: 20px, 50px, 20px, 0;
   color: darkmagenta;
 }
- /* word Engaging disappearing/appearing */ 
+
+/* word Engaging disappearing/appearing */
 .rotatingText-adjective:nth-of-type(1) {
   animation-name: rotate;
   animation-iteration-count: infinite;
   animation-duration: 12s;
   animation-delay: 1.5s;
 }
- /* word Fun disappearing/appearing */ 
+
+/* word Fun disappearing/appearing */
 .rotatingText-adjective:nth-of-type(2) {
   animation-name: rotate;
   animation-iteration-count: infinite;
   animation-duration: 12s;
   animation-delay: 2.5s;
 }
- /* word Friendly disappearing/appearing */ 
+
+/* word Friendly disappearing/appearing */
 .rotatingText-adjective:nth-of-type(3) {
   animation-name: rotate;
   animation-iteration-count: infinite;
   animation-duration: 12s;
   animation-delay: 3.5s;
 }
- /* word Perfect disappearing/appearing */ 
+
+/* word Perfect disappearing/appearing */
 .rotatingText-adjective:nth-of-type(4) {
   animation-name: rotate;
   animation-iteration-count: infinite;
   animation-duration: 12s;
   animation-delay: 4.5s;
 }
- /* word Perfect disappearing/appearing */ 
+
+/* word Perfect disappearing/appearing */
 .rotatingText-adjective:nth-of-type(5) {
   animation-name: rotate;
   animation-iteration-count: infinite;
@@ -159,36 +178,33 @@ margin-bottom: 15px;
 @keyframes rotate {
   0% {
     opacity: 0;
-    transform:(0, 50px, 0);
+    transform: (0, 50px, 0);
   }
-  
+
   90% {
     opacity: 1;
-    transform:(0, 0, 0);
+    transform: (0, 0, 0);
   }
-  
+
   100% {
     opacity: 0;
-  
+
   }
 }
 
-.visble{
-display: flex;
-top: 100px;
+.visble {
+  display: flex;
+  top: 100px;
 }
 
- /* Error Page */ 
-.Error
-{
-   text-transform: uppercase;
-  background-image: linear-gradient(
-    -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
-  );
+/* Error Page */
+.Error {
+  text-transform: uppercase;
+  background-image: linear-gradient(-225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%);
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
@@ -198,19 +214,19 @@ top: 100px;
   -webkit-text-fill-color: transparent;
   animation: textclip 10s linear infinite;
   display: inline-block;
-      font-size: 190px;
+  font-size: 190px;
 }
 
 @keyframes textclip {
   to {
     background-position: 200% center;
   }
-  
-}
- 
-/* leaving Comment box */ 
 
-.ChatPicture{
+}
+
+/* leaving Comment box */
+
+.ChatPicture {
   height: 30px;
   width: 30px;
 }
@@ -219,19 +235,21 @@ top: 100px;
   position: relative;
   width: 300px;
 }
+
 .custom-search-input {
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 100px;
-  padding: 10px 100px 10px 20px; 
+  padding: 10px 100px 10px 20px;
   line-height: 1;
   box-sizing: border-box;
   outline: none;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
+
 .custom-search-botton {
   position: absolute;
-  right: 3px; 
+  right: 3px;
   top: 3px;
   bottom: 3px;
   border: 0;
@@ -244,8 +262,8 @@ top: 100px;
   z-index: 2;
 }
 
-/* Older leaving Comment box */ 
-.LeaveComment{
+/* Older leaving Comment box */
+.LeaveComment {
   position: absolute;
   right: 18px;
   bottom: -18px;
@@ -259,6 +277,7 @@ top: 100px;
   cursor: pointer;
   outline: none;
 }
+
 .CommentForm .CommentInput,
 .CommentForm .CommentTextArea {
   width: 100%;
@@ -269,6 +288,7 @@ top: 100px;
   font-family: inherit;
   resize: none;
 }
+
 .CommentForm .CommentButton {
   right: 100px;
   bottom: -18px;
@@ -279,6 +299,7 @@ top: 100px;
   cursor: pointer;
   outline: none;
 }
+
 .CommentButton {
   color: #f5ba13;
   border: none;
@@ -290,65 +311,153 @@ top: 100px;
   font-weight: bolder;
 }
 
-#fairImage {
-  max-width: 420px;
-  max-height: 420px;
-}
-
 #commentContainer {
   align-content: center;
 }
-.aboutHeading{
+
+/* About Us section */
+
+.aboutHeading {
   text-align: center;
   margin-bottom: 40px;
 }
-.CardImage{
+
+.CardImage {
   height: 150px;
   width: 150px;
   border-radius: 5px;
   margin-right: 20px;
 }
-.card-header{
-align-items: center;
+
+.card-header {
+  align-items: center;
 
 }
-.card{
-margin: 10px;
-border: solid black 1px;
+
+.card {
+  margin: 10px;
+  border: solid black 1px;
 }
 
-.aboutUsButton{
+.aboutUsButton {
   background-color: #4A148C;
   color: white;
   height: 20px;
 }
 
-#fairCardImage {
-   box-shadow: 2px 2px 3px;
-  max-height: 280px; 
-  width: 100%;
-  object-fit: fit;
-}
+/* Fairlist style section */
 
+#listCol {
+  display: flex;
+  justify-content: space-evenly;
+}
 #fairlistCard {
- height: 500px;
- width: 400px;
- align-content: space-evenly;
- background-color: #f9f1fe;
-
-}
-
-#fairlistCard:hover {
+  display: flex;
+  height: 450px;
+  max-width: 450px;
+  background-color: #f9f1fe;
+  overflow: hidden;
+  transition: all 0.3s;
   box-shadow: 4px 4px 5px #4A148C;
 }
 
-#fairCardTitle {
-  text-align: center;  
-  padding-top: 10px;
-  padding-bottom: 10px;
+#fairlistCard:hover {
+  /* box-shadow: 4px 4px 5px #4A148C; */
+  transform: scale(1.15);
 }
 
-#detailsButton {
-  justify-content: right;
-  border-color: #2621A6;
+#fairCardTitle {
+  display: flex;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  justify-content: center;
+  align-items: baseline;
 }
+
+.viewButton {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.divFairImg {
+  display: flex;
+  object-fit: fill;
+  width: auto;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-top {
+  box-shadow: 2px 2px 3px;
+  max-height: 200px;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+#fairCardLocation {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: end;
+}
+
+#fairCardDates {
+  text-align: center;
+}
+
+/* Fair Details page styling */
+
+#fairImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 420px;
+  max-height: 420px;
+}
+
+#detailTitle {
+  padding: 10px;
+}
+
+#detailLocation {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  padding: 5px;
+}
+
+#detailDates {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  padding: 5px;
+}
+
+#divDetailImg {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#fairDesc {
+  display: flex;
+  align-items: center;
+}
+
+#divEditLink {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+#divWebLink {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+

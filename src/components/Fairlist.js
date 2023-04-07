@@ -54,19 +54,21 @@ const submitSearch = (event) => {
             {console.log(fair)}
               <div> 
                 <Container fluid>
-                  <Row xs={1} md={2} lg={4} className="g-4"  >
+                  <Row xs={1} md={2} lg={3} xl={4} className="g-4"  >
                   {fair.map((f, index) => {
                     return (
-                        <Col lg={true}  >
+                        <Col fluid id="listCol">
                           <Card key={f.fairId} id="fairlistCard" style={{ width: '18rem' }} onClick={() => {
                             navigate(`/fairdetails/${f.fairId}`) 
                             }}>
                             <Card.Body embed-responsive className="embed-responsive-4by3" >
-                            <CardImg variant="top" src={f.fairImage} id="fairCardImage" className="img-fluid rounded"/>
+                            <div className="divFairImg">
+                            <Card.Img src={f.fairImage} className="img-top"/>
+                            </div>
                             <Card.Title onClick={() => {
                               navigate(`/fairdetails/${f.fairId}`)
                               }}>
-                              <h3 id="fairCardTitle">{f.fairTitle}</h3>                             
+                              <h4 id="fairCardTitle">{f.fairTitle}</h4>                             
                             </Card.Title>
                               <Card.Text>
                               <div>
@@ -74,7 +76,9 @@ const submitSearch = (event) => {
                                   <p id="fairCardDates">{f.fairStartDate}-{f.fairEndDate}</p>
                               </div>
                               </Card.Text>
+                              <div className="viewButton">
                               <Link to={`/fairdetails/${f.fairId}`} className="btn btn-md btn-outline-secondary mx-1" id="detailsButton">Details</Link>
+                              </div>
                             </Card.Body>
                           </Card>
                         </Col>
