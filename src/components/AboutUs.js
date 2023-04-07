@@ -2,6 +2,7 @@ import React from "react";
 import BlankProfile from "../BlankProfile.png";
 import HowardHenson from "../HowardHenson.png";
 import CFoster from "../CFoster.jpg";
+import Samuel from "../Samuel.JPEG";
 import githubmark from "../githubmark.png";
 import LinkedIn from "../LinkedIn.png";
 
@@ -132,9 +133,9 @@ function AboutUs(props) {
               <img
                 alt="profileImage"
                 className="CardImage"
-                src={BlankProfile}
+                src={Samuel}
               />
-              <h2>Name</h2>{" "}
+              <h2>Samuel Akins</h2>{" "}
               <em>
                 <p>Co Founder</p>
               </em>
@@ -142,15 +143,14 @@ function AboutUs(props) {
             <div class="card-body">
               <h3>Hi 👋</h3>
               <p>
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen book. It has survived
-                not only five centuries, but also the leap into electronic
-                typesetting, remaining essentially unchanged. It was popularised
-                in the 1960s with the release of Letraset sheets containing
-                Lorem Ipsum passages, and more recently with desktop publishing
-                software like Aldus PageMaker including versions of Lorem Ipsum.
+               Hello! I live in southwest Ohio with my wife and two young kids. 
+               I found out about Bethel College through Anthony ONeal and Dave Ramsey, 
+               and got excited dreaming about what a career in Tech would mean for my family! 
+               I am excited about my journey as a software engineer, and I'm grateful for everyone who has helped get to this point!
+               In my spare time I love being with my wife and kids, teaching my kids how to make great coffee ( they don't drink any! ), 
+               and running. 
+               
+               <br></br>Ps- I'm only at the Fair for the food!
               </p>
               <a
                 href="https://www.linkedin.com"

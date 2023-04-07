@@ -20,6 +20,13 @@ export const FairProvider = (props) => {
     });
   }
 
+  function searchFairs(searchQuery) {
+    return  axios.get(`${baseUrl}/search/${searchQuery}`).then((response) => {
+      setFair(response.data);
+      console.log(response.data);
+    });    
+  }
+
   function getFair(fairId) {
     return axios.get(`${baseUrl}/${fairId}`).then((response) => {
       return new Promise((resolve) => resolve(response.data)).catch(
@@ -74,7 +81,8 @@ export const FairProvider = (props) => {
             getFair,
             createFair,
             updateFair,
-            deleteFair
+            deleteFair,
+            searchFairs
         }}>
             { props.children }
         </FairContext.Provider>
