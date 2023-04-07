@@ -429,6 +429,7 @@ h1 {
 #fairDesc {
   display: flex;
   align-items: center;
+  padding: 30px;
 }
 
 #canEdit {
@@ -477,3 +478,15 @@ h1 {
   background-color: #c669ff;
   border: 2px solid #42275a;
 }
+.buttonFormCombine{
+  display: flex;
+}
+.buttonSearchComment{
+  position: relative;
+  border-radius: 50%;
+  border: none;
+  right: 40px;
+  background-color: #f5ba13;
+
+}
+
