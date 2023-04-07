@@ -37,25 +37,27 @@ const Fairlist = () => {
         ({ fair }) => {
           return (
             <div>
-              <h1>List of Fairs</h1>
-              <div className="container padding" id="divSearch">
+              <h1 class="fairlist">List of Fairs</h1>
+              <div className="col-12" id="addFairButton">
+                <button href="/addfair" className="btn btn-primary">Add a Fair</button>
+              </div>
+              <div className="container" id="divSearch">
+
                 <div className="searchInputs">
                   <input
                     className="search"
                     placeholder="Enter a Fair..."
                     onChange={handleFilter}
                   />
-                  <button onClick={submitSearch}>search</button>
+                  <button onClick={submitSearch} className="btn btn-md btn-primary" id="magnify"><i class="bi bi-search" ></i></button>
                 </div>
               </div>
-              <div className="container padding" id="addFairButton">
-                <Button href="/addfair">Add New fair</Button>
-              </div>
+
               {/* <SearchBar placeholder="Enter a Book Name..." data={fair} /> */}
               {console.log(fair)}
               <div>
                 <Container fluid>
-                  <Row xs={1} md={2} lg={3} xl={4} className="g-4"  >
+                  <Row xs={1} sm={2} md={2} lg={3} xl={4} className="g-4"  >
                     {fair.map((f, index) => {
                       return (
                         <Col fluid id="listCol">

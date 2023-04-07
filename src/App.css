@@ -292,10 +292,35 @@ h1 {
 
 /* Fairlist style section */
 
+.fairlist {
+  margin-top: 5px;
+}
+
+#divSearch {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 15px;
+}
+
+.searchInputs{
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+#magnify {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  margin-left: 4px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.2) 0px 15px 12px;
+}
+
 #listCol {
   display: flex;
   justify-content: space-evenly;
 }
+
 #fairlistCard {
   display: flex;
   height: 450px;
@@ -418,9 +443,11 @@ h1 {
   align-items: center;
 }
 
-#editIcon {
-  color:#42275a;
+#editIcon, #delFairBtn {
+  color: #42275a;
 }
+
+
 
 .btn-secondary {
   background-color: #42275a;
