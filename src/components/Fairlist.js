@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import FairContext from "../contexts/FairContext";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Card, CardImg, Col, Container, Row } from "react-bootstrap";
@@ -10,8 +10,9 @@ const Fairlist = () => {
 
 let navigate = useNavigate();
 
+let { searchFairs } = useContext(FairContext);
+
 const [wordEntered, setWordEntered] = useState("");
-const [fair, setFair] = useState([]);
 
 const handleFilter = (event) => {
   const searchWord = event.target.value.toLowerCase();
@@ -27,11 +28,7 @@ const handleFilter = (event) => {
 // }, [fair]);
 
 const submitSearch = (event) => {
-  const fetchFairs = async () => {
-    const res = await axios.get(`http://localhost:3000/api/fairs?q=${wordEntered}`);
-    setFair(res.data);
-  };
-  if (fair.length === 0 || fair.length > 2) fetchFairs();
+  searchFairs(wordEntered);
 }
 
   return (
