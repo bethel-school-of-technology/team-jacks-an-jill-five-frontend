@@ -81,7 +81,7 @@ const FairDetails = () => {
                     <div className="col-12" id="detailTitle">
                         <h1 className="display-4">{fair.fairTitle}</h1>
                         {isOwner() && <Link to={`/updatefair/${fair.fairId}`} class="fs-2" id="editIcon"><i class="bi bi-pencil-square"></i></Link>}
-                        {isOwner() && <a class="fs-2" id="delFairBtn"><i class="bi bi-trash"></i></a>}
+                        {isOwner() && <a class="fs-2" id="delFairBtn" onClick={handleDelete}><i class="bi bi-trash"></i></a>}
                     </div>
                 </div>
             </div>
