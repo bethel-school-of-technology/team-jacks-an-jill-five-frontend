@@ -1,7 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import UserContext from "../contexts/UserContext";
-import FairContext from "../contexts/FairContext";
 import {
     Button,
     ListGroup,
@@ -17,28 +16,12 @@ const UserProfile = () => {
         userState: "",
         userReferral: "",
         userImage: "",
-        userId: ""
+        userId: "",
+        Fairs: []
     });
-
-    let [fair, setFair] = useState({
-        fairId: "",
-        fairTitle: "",
-        fairCity: "",
-        fairState: "",
-        fairZip: "",
-        fairDescription: "",
-        fairStartDate: "",
-        fairEndDate: "",
-        fairImage: "",
-        fairWebsite: "",
-        userId: ""
-    });
-
 
     const params = useParams();
     const { getCurrentUser } = useContext(UserContext)
-    const { getFair } = useContext(FairContext)
-
 
     useEffect(() => {
         async function fetch() {
@@ -52,13 +35,6 @@ const UserProfile = () => {
         }
         fetch()
     }, [params.userId]);
-
-    useEffect(() => {
-        async function fetch() {
-            await getFair().then((fair) => setFair(fair))
-        }
-        fetch()
-    }, [params.fairId]);
 
     console.log(user);
 
@@ -74,16 +50,20 @@ const UserProfile = () => {
                 </Card.Body>
             </Card>
 
-            <Card>
-                <Card.Header as="h5">{user.username}'s Fairs will display here.</Card.Header>
-                <Card.Body>
-                    <Card.Title>{fair.fairTitle}</Card.Title>
-                    <Card.Text>
-                        {fair.fairDescription}
-                    </Card.Text>
-                    <Button variant="primary" href={`/fairdetails/${fair.fairId}`}>Details</Button>
-                </Card.Body>
-            </Card>
+            {user.Fairs.map((fairs, index) => {
+                return (
+                    <Card>
+                        <Card.Header as="h5">{user.username}'s Fairs will display here.</Card.Header>
+                        <Card.Body>
+                            <Card.Title>{fairs.fairTitle}</Card.Title>
+                            <Card.Text>
+                                {fairs.fairDescription}
+                            </Card.Text>
+                            <Button variant="primary" href={`/fairdetails/${fairs.fairId}`}>Details</Button>
+                        </Card.Body>
+                    </Card>
+                )
+            })}
         </>
 
     )
