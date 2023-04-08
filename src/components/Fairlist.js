@@ -21,11 +21,14 @@ const handleFilter = (event) => {
 
 // useEffect(() => {
 //   const fetchFairs = async () => {
-//     const res = await axios.get(`http://localhost:3000/api/fairs?q=${wordEntered}`);
-//     setFair(res.data);
+//     const res = await searchFairs(wordEntered)
+//     .then((wordEntered) => setWordEntered(wordEntered))
+//     setWordEntered(res.data);
 //   };
-//   if (fair.length === 0 || fair.length > 2) fetchFairs();
-// }, [fair]);
+//   if (wordEntered.length === 0 || wordEntered.length > 2) {
+//   fetchFairs();
+//   }
+// }, [wordEntered]);
 
 const submitSearch = (event) => {
   searchFairs(wordEntered);
