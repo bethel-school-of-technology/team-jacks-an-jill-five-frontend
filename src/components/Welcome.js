@@ -14,18 +14,18 @@ function Welcome() {
           <h1 className="title">What's Fair</h1>
           <em>
             <p style={{ fontWeight: 500 }}>
-              An unique exciting tool that lets you leave honest fair candid{" "}
+              A unique exciting tool that lets you leave honest fair candid{" "}
               reviews on your latest trip. So that others may know about it.
             </p>
           </em>
           <p style={{ fontWeight: 500 }}>
             Festivals? State Parks? State Fairs? Are you a foodie? If you can go
-            to it. You can leave a fair review/comment about it. So what are you
+            to it, You can leave a fair review/comment about it. So what are you
             waiting for......
           </p>
           <p style={{ fontSize: 15 }}>
             <em>
-              Not comfrotable leaving a reveiw yet? No worries. See what others
+              Not comfortable leaving a reveiw yet? No worries. See what others
               are saying about events happening near you and go enjoy a
               wonderful day.{" "}
             </em>
