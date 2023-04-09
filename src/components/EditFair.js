@@ -2,14 +2,13 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Row } from 'react-bootstrap';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import FairContext from '../contexts/FairContext';
-import UserContext from './../contexts/UserContext';
 import { Button, Form, Col} from 'react-bootstrap';
+import "./EditFair.css";
 
 const EditFair = () => {
 
   let navigate = useNavigate();
   let { updateFair, getFair, deleteFair } = useContext(FairContext);
-  // let { getCurrentUser } = useContext(UserContext);
   let params = useParams()
   
   let [ changeFair, setChangeFair ] = useState({
@@ -94,27 +93,11 @@ const EditFair = () => {
 
     return (
       <div>
-          {/* Navbar  */}
-          {/* <Navbar bg="dark" variant="dark">
-          <Container>
-              <Navbar.Brand href="#home"><img className="logo" src="/images/logo.jpeg" alt=""/></Navbar.Brand>
-              <Navbar.Brand href="#home">Reaction Shop</Navbar.Brand>
-                  <nav>
-                      <Link to="/reactions/profile/:id">{getUser.username}</Link>
-                      <span> | </span>
-                      <Link to="/Logout">LogOut</Link>
-                      <span> | </span>
-                      <Link to="/reactions">All Reacions</Link>
-                      <hr></hr>
-                  </nav>
-                  <Image src="/images/login-icon.png" className="ms-3" height="40" roundedCircle />
-          </Container>
-        </Navbar> */}
         <div>
-        <Link to={`/fairdetails/${fairId}`} className="btn btn-warning mx-1">Back</Link>
+          <Link to={`/fairdetails/${fairId}`} className="btn btn-edit mx-1">Back</Link>
         </div>
         <div className="wrap-container">
-        <div className="form-container">
+        <div className="form-container" id="editFairForm">
         <h1>Edit Event</h1>
         <Form>
           <Form.Group classname="mb-3">
@@ -151,13 +134,6 @@ const EditFair = () => {
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>State</Form.Label>
-            {/* <Form.Control
-              placeholder="Enter State Here"
-              type="text"
-              value={changeFair.fairState}
-              name="fairState"
-              onChange={handleChange}
-            /> */}
             <Form.Select  defaultValue="Choose..."
               value={changeFair.fairState}
               name="fairState"
@@ -271,17 +247,17 @@ const EditFair = () => {
           </Form.Group>
 
           <Button
-            className="btn"
+            id="btn-edit-event"
             variant="warning"
-            type="button"
+            // type="button"
             onClick={handleSubmit}
           >
             Edit Event
           </Button>
           <Button
-            className="btn"
+            id="btn-delete"
             variant="warning"
-            type="button"
+            // type="button"
             onClick={handleDelete}
           >
             Delete Event
