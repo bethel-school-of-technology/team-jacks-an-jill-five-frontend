@@ -48,13 +48,6 @@ function Home() {
             Sign In
           </Link>
           <Link
-            to="/addfair"
-            className="nav-link"
-            onClick={() => setExpanded(false)}
-          >
-            Add Fair
-          </Link>
-          <Link
             to="/fairlist"
             className="nav-link"
             onClick={() => setExpanded(false)}

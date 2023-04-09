@@ -32,9 +32,9 @@ const SignIn = () => {
           <Form.Group>
             <Form.Label>Username</Form.Label>
             <Form.Control
-              input
+              // input
               placeholder="Enter username"
-              type="text"
+              type="username"
               name="username"
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -44,7 +44,7 @@ const SignIn = () => {
             <Form.Label>Password</Form.Label>
             <span className="visble">
               <Form.Control
-                input
+                // input
                 placeholder="Enter password"
                 type="password"
                 name="text"

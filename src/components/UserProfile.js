@@ -1,11 +1,16 @@
 import React, { useEffect, useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import UserContext from "../contexts/UserContext";
+import "./UserProfile.css";
 import {
     Button,
     ListGroup,
-    Card
+    Card,
+    Container,
+    Row,
+    Col
 } from "react-bootstrap";
+import CardHeader from "react-bootstrap/esm/CardHeader";
 
 const UserProfile = () => {
 
@@ -40,33 +45,48 @@ const UserProfile = () => {
 
     return (
         <>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={user.userImage} />
-                <Card.Body>
-                    <Card.Title>Welcome, {user.username}</Card.Title>
-                    <ListGroup className="list-group-flush">
-                        <ListGroup.Item>{user.userCity}, {user.userState}</ListGroup.Item>
-                    </ListGroup>
-                </Card.Body>
-            </Card>
+            <Container>
+                <Row>
+                    <Col sm={10} md={4} lg={4}>
+                        <Card id="userCard" border="light" key={user.userId}>
+                            <Card.Img variant="top" src={user.userImage} />
+                            <CardHeader id="userCardHeader" as="h6">Hello, {user.username}!</CardHeader>
+                            <Card.Body>
+                                <ListGroup className="list-group-flush">
+                                    <ListGroup.Item>{user.userCity}, {user.userState}</ListGroup.Item>
+                                </ListGroup>
+                            </Card.Body>
+                        </Card>
+                    </Col>
 
-            {user.Fairs.map((fairs, index) => {
-                return (
-                    <Card>
-                        <Card.Header as="h5">{user.username}'s Fairs will display here.</Card.Header>
-                        <Card.Body>
-                            <Card.Title>{fairs.fairTitle}</Card.Title>
-                            <Card.Text>
-                                {fairs.fairDescription}
-                            </Card.Text>
-                            <Button variant="primary" href={`/fairdetails/${fairs.fairId}`}>Details</Button>
-                        </Card.Body>
-                    </Card>
-                )
-            })}
+                    <Col sm={10} md={8} lg={8}>
+                        {user.Fairs.map((fair, index) => {
+                            return (
+                                <Card id="userFairCard" border="warning" key={fair.fairId}>
+                                    <Card.Header id="fairCardHeader" as="h5">{fair.fairTitle}</Card.Header>
+                                    <Card.Body>
+                                        <Container >
+                                            <Row>
+                                                <Card.Img id="userFairImg" src={fair.fairImage} />
+                                                <ListGroup id="fairText" className="list-group-flush">
+                                                    <ListGroup.Item as="h6">{fair.fairCity}, {fair.fairState}</ListGroup.Item>
+                                                    <Card.Text>{fair.fairStartDate} - {fair.fairEndDate}</Card.Text>
+                                                    <Card.Text>{fair.fairDescription}</Card.Text>
+                                                </ListGroup>
+                                            </Row>
+                                        </Container>
+                                        <Button id="userFairCardBtn" variant="warning" href={`/fairdetails/${fair.fairId}`}>Details</Button>
+                                        <Button id="userFairCardBtn" variant="warning" href={`/updatefair/${fair.fairId}`}>Edit Fair</Button>
+                                        <Button id="userFairCardBtn" variant="warning" href={fair.fairWebsite}>Event Site</Button>
+                                    </Card.Body>
+                                </Card>
+                            )
+                        })}
+                    </Col>
+                </Row>
+            </Container>
         </>
-
     )
-}
+};
 
 export default UserProfile;
