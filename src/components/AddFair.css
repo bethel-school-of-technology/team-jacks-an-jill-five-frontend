@@ -34,7 +34,9 @@
   }
 
   .btn {
-    margin: 10px auto;
+    margin: 10px 5px auto;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.2) 0px 15px 12px;
+
     /* background-color: lightgoldenrodyellow;
     color: var(--white); */
   }

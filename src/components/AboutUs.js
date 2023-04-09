@@ -1,5 +1,4 @@
 import React from "react";
-import BlankProfile from "../BlankProfile.png";
 import HowardHenson from "../HowardHenson.png";
 import CFoster from "../CFoster.jpg";
 import Samuel from "../Samuel.JPEG";
@@ -7,18 +6,26 @@ import githubmark from "../githubmark.png";
 import LinkedIn from "../LinkedIn.png";
 import "./AboutUs.css";
 import ferrisWheelcard from "../FerrisWheelCard.png";
-import { Card, Figure } from "react-bootstrap";
+import creators from "../creators.png";
 
 function AboutUs(props) {
   return (
     <>
-      <h1 className="aboutHeading">The Creators of What's Fair</h1>
+      <div className="container-fluid no-padding">
+      <div className="row">
+      <div className="col-md-12">
+        <img src={creators} alt="ferris wheel" className="img-fluid.max-width: 100%; height: auto;" id="creators" />
+        </div>
+        </div>
+      </div>
+      {/* <h1 className="aboutHeading">The Creators of What's Fair</h1> */}
+     <div className="card-container">
       <div className="row">
         {/* flip card containers here */}
         
           {/* Start Profile 1 */}
           <input type="checkbox" id="profileCard" />
-          <label className="col-md-4 card-container" for="profileCard">
+          <label className="col-md-4 col-sm-3 card-container" for="profileCard">
             <div className="card-flip">
               {/* <!-- Card Front - Profile 1 --> */}
               <div className="card front">
@@ -31,7 +38,7 @@ function AboutUs(props) {
                   </div>
                   <div className="col">
                   <img
-                    alt="profile Image"
+                    alt="profile pic"
                     className="CardImage"
                     src={HowardHenson}
                   />
@@ -101,7 +108,7 @@ function AboutUs(props) {
                   </div>
                   <div className="col">
                   <img
-                    alt="profile Image"
+                    alt="profile pic"
                     className="CardImage"
                     src={CFoster}
                   />
@@ -179,9 +186,9 @@ function AboutUs(props) {
                   </div>
                   <div className="col">
                   <img
-                    alt="profile Image"
+                    alt="profile pic"
                     className="CardImage"
-                    src={""}
+                    src="https://ca.slack-edge.com/T9P33872P-U03GE6KP02F-7de3f9355952-512"
                   />
                   </div>
                   </div>
@@ -261,7 +268,7 @@ function AboutUs(props) {
                   </div>
                   <div className="col">
                   <img
-                    alt="profile Image"
+                    alt="profile pic"
                     className="CardImage"
                     src={Samuel}
                   />
@@ -340,7 +347,7 @@ function AboutUs(props) {
                   </div>
                   <div className="col">
                   <img
-                    alt="profile Image"
+                    alt="profile pic"
                     className="CardImage"
                     src={"https://media.licdn.com/dms/image/C5603AQEniWJeYf6PzA/profile-displayphoto-shrink_200_200/0/1654608690102?e=1686182400&v=beta&t=9chKLkJqDvg9TkrvedRC8QPKZK-9Hq1QUVwgtaWTPg8"}
                   />
@@ -410,6 +417,7 @@ function AboutUs(props) {
 
         {/* end flip card containers */}
 
+      </div>
       </div>
     </>
   );
