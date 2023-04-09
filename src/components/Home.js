@@ -7,13 +7,23 @@ import UserContext from "../contexts/UserContext";
 function Home() {
 
   const [expanded, setExpanded] = useState(false);
-  const [user, setUser] = useState()
+  const [user, setUser] = useState({
+    username: "",
+    userEmail: "",
+    userCity: "",
+    userState: "",
+    userReferral: "",
+    userImage: "",
+    userId: "",
+    Fairs: []
+  })
 
   const { getCurrentUser } = useContext(UserContext);
 
   const navigate = useNavigate()
   const params = useParams();
 
+  const auth = localStorage.getItem('myFairToken')
 
   useEffect(() => {
     async function fetch() {
@@ -30,7 +40,7 @@ function Home() {
 
   const authLink = () => {
 
-    if (!user) {
+    if (!auth) {
       return (
         <Nav>
           <Link
