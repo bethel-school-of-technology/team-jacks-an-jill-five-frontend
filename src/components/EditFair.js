@@ -111,7 +111,7 @@ const EditFair = () => {
           </Container>
         </Navbar> */}
         <div>
-        <Link to={`/fairdetails/${fairId}`} className="btn btn-warning mx-1">Back</Link>
+        <Link to={-1} className="btn btn-warning mx-1">Back</Link>
         </div>
         <div className="wrap-container">
         <div className="form-container">

@@ -136,6 +136,7 @@ const FairDetails = () => {
                     </div>
                 </div>
             </div>
+            
         </>
     )
 }

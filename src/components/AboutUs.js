@@ -7,26 +7,21 @@ import LinkedIn from "../LinkedIn.png";
 import "./AboutUs.css";
 import ferrisWheelcard from "../FerrisWheelCard.png";
 import creators from "../creators.png";
+import { Row, Col, Container} from "react-bootstrap";
 
 function AboutUs(props) {
   return (
     <>
-      <div className="container-fluid no-padding">
-      <div className="row">
-      <div className="col-md-12">
-        <img src={creators} alt="ferris wheel" className="img-fluid.max-width: 100%; height: auto;" id="creators" />
-        </div>
-        </div>
-      </div>
-      {/* <h1 className="aboutHeading">The Creators of What's Fair</h1> */}
-     <div className="card-container">
-      <div className="row">
+    {/* <div className="no-padding"><img src={creators} alt="ferris wheel" id="creators"/></div> */}
+      <h1 className="aboutHeading">The Creators of What's Fair</h1>
+     <Container className="card-container">
+      <Row xs={1} sm={2} md={2} lg={3} xl={3}>
         {/* flip card containers here */}
-        
+        <Col>
           {/* Start Profile 1 */}
           <input type="checkbox" id="profileCard" />
-          <label className="col-md-4 col-sm-3 card-container" for="profileCard">
-            <div className="card-flip">
+          <label className="col-md-4 card-container" for="profileCard">
+            <div className="card-flip mx-2">
               {/* <!-- Card Front - Profile 1 --> */}
               <div className="card front">
                 <div className="card-block">
@@ -70,11 +65,13 @@ function AboutUs(props) {
                   </div>
                 </div>
               </div>
+              
               {/* <!-- End Card Front - Profile 1 -->
 
         <!-- Card Back - Profile 1  --> */}
+
               <div className="card back text-center">
-                <div className="card-block">
+                <div className="card-block mr-2 pr-2">
                   <img src={ferrisWheelcard} className="card-img" id="fwImg" alt="ferris wheel" />
                   <div className="card-img-overlay">
                     <h2 id="profile_h2" className="fav-title">Howard Henson</h2>
@@ -94,10 +91,13 @@ function AboutUs(props) {
 
 
           {/* <!-- End Card - Profile 1 --> */}
+          </Col>
+          <Col></Col>
+          <Col fluid >
           {/* Start Profile 2 */}
           <input type="checkbox" id="profileCard2" />
-          <label className="col-md-4 col-md-4 card-container" for="profileCard2">
-            <div className="card-flip">
+          <label className="col-md-4 col-sm-3 card-container" for="profileCard2">
+            <div className="card-flip mx-2">
               {/* <!-- Card Front - Profile 2 --> */}
               <div class="card front">
                 <div class="card-block">
@@ -170,11 +170,14 @@ function AboutUs(props) {
 
 
           {/* <!-- End Profile 2 --> */}
+          </Col>
+          <Col></Col>
+          <Col fluid={true} >
 
           {/* Start Profile 3 */}
 
           <input type="checkbox" id="profileCard3" />
-          <label className="col-md-4 card-container" for="profileCard3">
+          <label className="col-md-4 col-sm-3 card-container" for="profileCard3">
             <div className="card-flip">
               {/* <!-- Card Front - Profile 3 --> */}
               <div class="card front">
@@ -249,14 +252,17 @@ function AboutUs(props) {
             </div>
           </label>
 
-
+          
           {/* <!-- End Profile 3 --> */}
+          </Col>
+          <Col></Col>
+          <Col fluid >
 
 
           {/* Start Profile 4 */}
 
           <input type="checkbox" id="profileCard4" />
-          <label className="col-md-4 card-container" for="profileCard4">
+          <label className="col-md-4 col-sm-3 card-container" for="profileCard4">
             <div className="card-flip">
               {/* <!-- Card Front - Profile 4 --> */}
               <div class="card front">
@@ -330,12 +336,15 @@ function AboutUs(props) {
           </label>
 
 
-          {/* <!-- End Profile 5 --> */}
+          {/* <!-- End Profile 4 --> */}
+          </Col>
+          <Col></Col>
+          <Col fluid >
 
           {/* Start Profile 5 */}
 
           <input type="checkbox" id="profileCard5" />
-          <label className="col-md-4 card-container" for="profileCard5">
+          <label className="col-md-4 col-sm-3 card-container" for="profileCard5">
             <div className="card-flip">
               {/* <!-- Card Front - Profile 5 --> */}
               <div class="card front">
@@ -416,9 +425,9 @@ function AboutUs(props) {
 
 
         {/* end flip card containers */}
-
-      </div>
-      </div>
+        </Col>
+      </Row>
+      </Container>
     </>
   );
 }
