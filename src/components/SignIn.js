@@ -11,12 +11,15 @@ const SignIn = () => {
 
   let { signInUser } = useContext(UserContext);
   let navigate = useNavigate();
+  
+  const refresh = () => window.location.reload(true);
 
   function handleSubmit(event) {
     event.preventDefault();
     signInUser(username, password)
       .then(() => {
         navigate("/profile");
+        refresh();
       })
       .catch((error) => {
         console.log(error);

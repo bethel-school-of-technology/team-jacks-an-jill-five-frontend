@@ -148,7 +148,7 @@ function AboutUs(props) {
             <div class="card-body">
               <h3>Hi 👋</h3>
               <p>
-                Hello! I live in southwest Ohio with my wife and two young kids.
+                Hello! I live in southwest Ohio with my wife and three young kids.
                 I found out about Bethel College through Anthony ONeal and Dave
                 Ramsey, and I started dreaming about what a career in Tech
                 would mean for my family! I am excited about my journey as a
