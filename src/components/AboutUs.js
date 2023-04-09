@@ -5,6 +5,7 @@ import CFoster from "../CFoster.jpg";
 import Samuel from "../Samuel.JPEG";
 import githubmark from "../githubmark.png";
 import LinkedIn from "../LinkedIn.png";
+import JoshuaBetrand from "../JoshuaBetrand.jpg";
 
 function AboutUs(props) {
   return (
@@ -95,7 +96,7 @@ function AboutUs(props) {
               <img
                 alt="profileImage"
                 className="CardImage"
-                src={BlankProfile}
+                src={JoshuaBetrand}
               />
               <h2>Joshua Betrand</h2>{" "}
               <em>

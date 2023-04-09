@@ -21,6 +21,17 @@ export const FairProvider = (props) => {
   }
 
   function searchFairs(searchQuery) {
+    // let fair = {
+    // fairTitle,
+    // fairCity,
+    // fairState,
+    // fairZip,
+    // fairDescription,
+    // fairStartDate,
+    // fairEndDate,
+    // fairImage,
+    // fairWebsite}
+
     return  axios.get(`${baseUrl}/search/${searchQuery}`).then((response) => {
       setFair(response.data);
       console.log(response.data);
