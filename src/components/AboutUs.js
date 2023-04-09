@@ -149,12 +149,12 @@ function AboutUs(props) {
               <p>
                 Hello! I live in southwest Ohio with my wife and two young kids.
                 I found out about Bethel College through Anthony ONeal and Dave
-                Ramsey, and got excited dreaming about what a career in Tech
+                Ramsey, and I started dreaming about what a career in Tech
                 would mean for my family! I am excited about my journey as a
                 software engineer, and I'm grateful for everyone who has helped
                 get to this point! In my spare time I love being with my wife
-                and kids, teaching my kids how to make great coffee ( they don't
-                drink any! ), and running.
+                and kids, teaching my kids how to make great coffee (they don't
+                drink any!), and running.
                 <br></br>Ps- I'm only at the Fair for the food!
               </p>
               <a
