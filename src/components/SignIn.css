@@ -1,6 +1,9 @@
+/* For singin page */
+
 #signInCard {
     display: flex;
     --bs-card-border-color: #2621A6;
+    box-shadow: 4px 4px 5px #4A148C;
     text-align: center;
 }
 
