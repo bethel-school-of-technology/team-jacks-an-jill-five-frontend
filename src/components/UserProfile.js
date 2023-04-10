@@ -77,7 +77,7 @@ const UserProfile = () => {
                                         </Container>
                                         <Button id="userFairCardBtn" variant="warning" href={`/fairdetails/${fair.fairId}`}>Details</Button>
                                         <Button id="userFairCardBtn" variant="warning" href={`/updatefair/${fair.fairId}`}>Edit Fair</Button>
-                                        <Button id="userFairCardBtn" variant="warning" href={fair.fairWebsite}>Event Site</Button>
+                                        <Button id="userFairCardBtn" variant="warning" href={fair.fairWebsite} rel="noreferrer" target="_blank">Event Site</Button>
                                     </Card.Body>
                                 </Card>
                             )
