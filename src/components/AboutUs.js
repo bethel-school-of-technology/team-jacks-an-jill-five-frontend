@@ -1,4 +1,5 @@
 import React from "react";
+import BlankProfile from "../BlankProfile.png";
 import HowardHenson from "../HowardHenson.png";
 import CFoster from "../CFoster.jpg";
 import Samuel from "../Samuel.JPEG";

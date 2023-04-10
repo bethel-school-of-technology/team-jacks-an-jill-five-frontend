@@ -13,7 +13,7 @@ function FairlistRefresh() {
         <Link to={-1} className="btn btn-warning mx-1">Back</Link>
         </div>
         <div className="col-lg-6" id="returnBtn">
-        <Link to={refresh} className="btn btn-warning mx-1">Refresh fair list</Link>
+        <button onClick={refresh} className="btn btn-warning mx-1">Refresh fair list</button>
         </div>
         </div>
         </div>
