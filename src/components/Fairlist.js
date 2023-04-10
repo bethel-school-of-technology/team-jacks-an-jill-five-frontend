@@ -1,9 +1,7 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import FairContext from "../contexts/FairContext";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Card, CardImg, Col, Container, Row } from "react-bootstrap";
-import SearchBar from "./SearchBar";
-import axios from "axios";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import "./Fairlist.css";
 import FairlistRefresh from "./FairlistRefresh";
 
@@ -19,14 +17,6 @@ const Fairlist = () => {
     setWordEntered(searchWord);
   };
 
-  // useEffect(() => {
-  //   const fetchFairs = async () => {
-  //     const res = await axios.get(`http://localhost:3000/api/fairs?q=${wordEntered}`);
-  //     setFair(res.data);
-  //   };
-  //   if (fair.length === 0 || fair.length > 2) fetchFairs();
-  // }, [fair]);
-
   const submitSearch = (event) => {
     searchFairs(wordEntered);
   };
@@ -39,8 +29,8 @@ const Fairlist = () => {
             <h1 className="fairlist">List of Fairs</h1>
             <div className="col-12" id="addFairButton">
               <button className="btn btn-primary" onClick={() => {
-                            navigate(`/addfair`);
-                          }}>
+                navigate(`/addfair`);
+              }}>
                 Add a Fair
               </button>
             </div>
