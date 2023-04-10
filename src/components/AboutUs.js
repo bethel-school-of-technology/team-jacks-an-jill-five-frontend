@@ -5,6 +5,7 @@ import CFoster from "../CFoster.jpg";
 import Samuel from "../Samuel.JPEG";
 import githubmark from "../githubmark.png";
 import LinkedIn from "../LinkedIn.png";
+import JoshuaBetrand from "../JoshuaBetrand.jpg";
 import "./AboutUs.css";
 import ferrisWheelcard from "../FerrisWheelCard.png";
 import creators from "../creators.png";
@@ -13,7 +14,6 @@ import { Row, Col, Container} from "react-bootstrap";
 function AboutUs(props) {
   return (
     <>
-    {/* <div className="no-padding"><img src={creators} alt="ferris wheel" id="creators"/></div> */}
       <h1 className="aboutHeading">The Creators of What's Fair</h1>
      <Container className="card-container">
       <Row xs={1} sm={2} md={2} lg={3} xl={3}>
@@ -192,7 +192,7 @@ function AboutUs(props) {
                   <img
                     alt="profile pic"
                     className="CardImage"
-                    src="https://ca.slack-edge.com/T9P33872P-U03GE6KP02F-7de3f9355952-512"
+                    src={JoshuaBetrand}
                   />
                   </div>
                   </div>

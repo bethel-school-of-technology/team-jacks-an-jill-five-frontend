@@ -22,7 +22,13 @@ export const FairProvider = (props) => {
 
   function searchFairs(searchQuery) {
     return  axios.get(`${baseUrl}/search/${searchQuery}`).then((response) => {
-      setFair(response.data);
+    //  setFair(response.data);
+      if (response.data.length === 0 ) {
+        alert("NO MATCHES FOUND! Try again!")
+      } else {
+        return  setFair(response.data);
+
+      }
       console.log(response.data);
     });    
   }

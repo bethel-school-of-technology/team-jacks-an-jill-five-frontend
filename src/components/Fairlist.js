@@ -36,9 +36,11 @@ const Fairlist = () => {
       {({ fair }) => {
         return (
           <div>
-            <h1 class="fairlist">List of Fairs</h1>
+            <h1 className="fairlist">List of Fairs</h1>
             <div className="col-12" id="addFairButton">
-              <button href="/addfair" className="btn btn-primary">
+              <button className="btn btn-primary" onClick={() => {
+                            navigate(`/addfair`);
+                          }}>
                 Add a Fair
               </button>
             </div>
