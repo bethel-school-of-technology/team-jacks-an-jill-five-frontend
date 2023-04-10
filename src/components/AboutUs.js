@@ -1,5 +1,4 @@
 import React from "react";
-import BlankProfile from "../BlankProfile.png";
 import HowardHenson from "../HowardHenson.png";
 import CFoster from "../CFoster.jpg";
 import Samuel from "../Samuel.JPEG";
@@ -8,7 +7,6 @@ import LinkedIn from "../LinkedIn.png";
 import JoshuaBetrand from "../JoshuaBetrand.jpg";
 import "./AboutUs.css";
 import ferrisWheelcard from "../FerrisWheelCard.png";
-import creators from "../creators.png";
 import { Row, Col, Container} from "react-bootstrap";
 
 function AboutUs(props) {
@@ -284,7 +282,7 @@ function AboutUs(props) {
                   <div className="card-body">
                     <h3>Hi 👋</h3>
                     <p id="about_p">
-                      Hello! I live in southwest Ohio with my wife and two young kids.
+                      Hello! I live in southwest Ohio with my wife and three young kids.
                       I found out about Bethel College through Anthony ONeal and Dave
                       Ramsey, and got excited dreaming about what a career in Tech
                       would mean for my family! I am excited about my journey as a

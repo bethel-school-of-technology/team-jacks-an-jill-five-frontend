@@ -25,6 +25,8 @@
     height: 150px;
     width: 150px;
     border-radius: 5px;
+    overflow: hidden;
+    object-fit: cover;
 }
 
 .card-header {
