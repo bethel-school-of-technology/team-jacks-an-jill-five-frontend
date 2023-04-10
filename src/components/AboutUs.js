@@ -197,17 +197,13 @@ function AboutUs(props) {
                   <div className="card-body">
                     <h3>Hi 👋</h3>
                     <p id="about_p">
-                      I'm a full stack engineer with a passion for
-                      problem-solving and bringing innovative solutions to the table.
+                      Born and raised in Manning, SC. Country Boy!
                       Growing up, I knew I was destined to be an engineer and even
-                      built my first computer at a young age. My journey has taken me
-                      from electrical engineering to software engineering, where I've
-                      honed my skills in both front-end and back-end development. In
+                      built my first computer at a young age. In
                       my free time, I enjoy indulging my creative side as a musician,
                       playing the drums since I was five. I also like to stay active
                       and play basketball regularly. Additionally, I have a keen
-                      interest in day trading and coding on the side, always looking
-                      for new opportunities to learn and grow.
+                      interest in day trading and coding on the side. P.S.- I'm also only at the fairs for the food and rides!
                     </p>
                     <a
                       href="https://www.linkedin.com/in/joshua-betrand/"
