@@ -5,6 +5,7 @@ import { Button, Card, CardImg, Col, Container, Row } from "react-bootstrap";
 import SearchBar from "./SearchBar";
 import axios from "axios";
 import "./Fairlist.css";
+import FairlistRefresh from "./FairlistRefresh";
 
 const Fairlist = () => {
   let navigate = useNavigate();
@@ -116,11 +117,17 @@ const Fairlist = () => {
                   })}
                 </Row>
               </Container>
+              <div>
+                <FairlistRefresh />
+              </div>
             </div>
           </div>
+
         );
       }}
     </FairContext.Consumer>
+
+
   );
 };
 

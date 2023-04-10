@@ -121,7 +121,7 @@ const FairDetails = () => {
                                             {fair.Comments.map((comment, index) => {
                                                 return (
                                                     <div>
-                                                        <div>{index + 1}. {comment.commentTitle}</div>
+                                                        <div id="commentBubble">{index + 1}. {comment.commentTitle}</div>
                                                         <div></div>
                                                     </div>
                                                 )
@@ -136,6 +136,7 @@ const FairDetails = () => {
                     </div>
                 </div>
             </div>
+            
         </>
     )
 }
