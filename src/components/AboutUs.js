@@ -294,14 +294,14 @@ function AboutUs(props) {
                       drink any! ), and running.<br></br>Ps- I'm only at the Fair for the food!
                     </p>
                     <a
-                      href="https://www.linkedin.com/in//"
+                      href="https://www.linkedin.com/in/samuel-akins/"
                       rel="noreferrer"
                       target="_blank"
                     >
                       <img alt="socialImage" src={LinkedIn} style={{ width: 30 }} />
                     </a>
                     <a
-                      href="https://github.com/"
+                      href="https://github.com/Samuel-Akins"
                       rel="noreferrer"
                       target="_blank"
                     >
